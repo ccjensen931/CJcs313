@@ -1,7 +1,14 @@
-ul.nav {
-    text-align: center;
+.Header {
+    display: table;
+    margin: 0 auto;
 }
 
-ul.nav li {
-    display: inline-block;
+.Horizontal_List {
+    min-width: 696px;
+	list-style: none;
+	padding-top: 20px;
 }
+
+ul#horizontal-list li {
+		display: inline;
+	}
