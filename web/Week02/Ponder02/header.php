@@ -16,10 +16,10 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item active">
-                    <a href="index.php">Home</a>
+                    <a class="nav-link" href="index.php">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a href="assignments.php">Assignments</a>
+                    <a class="nav-link" href="assignments.php">Assignments</a>
                 </li> 
             </ul>
         </div>
