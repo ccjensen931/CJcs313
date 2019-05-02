@@ -17,14 +17,22 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a <?php 
+                <li <?php 
                     if(basename($_SERVER['PHP_SELF']) == 'index.php'){
-                       echo "class=\"active\"";
+                       echo "class=\"nav-link active\"";
+                    } else {
+                        echo "class=\"nav-link\"";
                     }
-                    ?> class="nav-link" href="index.php">Home</a>
+                    ?>>
+                    <a class="nav-link" href="index.php">Home</a>
                 </li>
-                <li class="nav-item">
+                <li <?php 
+                    if(basename($_SERVER['PHP_SELF']) == 'index.php'){
+                       echo "class=\"nav-link active\"";
+                    } else {
+                        echo "class=\"nav-link\"";
+                    }
+                    ?>>
                     <a class="nav-link" href="assignments.php">Assignments</a>
                 </li>
                 <li class="nav-item">
