@@ -9,11 +9,16 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="header.css">
 
-        <nav id="Header">
-            <ul id="Horizontal_List">
+    <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="#">WebSiteName</a>
+            </div>
+            <ul class="nav navbar-nav">
                 <li><a href="index.php">Home</a></li>
                 <li><a href="assignments.php">Assignments</a></li>
             </ul>
-        </nav>
+        </div>
+    </nav>
     </head>
 </html>

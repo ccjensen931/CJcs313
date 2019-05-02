@@ -10,12 +10,13 @@
     <?php
       include 'header.php'
     ?>
-    
+
     <title>Assignments</title>
   </head>
   <body>
     <ul>
         <li><a href="../../Week01/Ponder01/hello.html">Ponder 01</a></li>
+        <li><a href="../../Week02/Ponder02/index.php">Ponder 02</a></li>
     </ul>  
   </body>
 </html>
