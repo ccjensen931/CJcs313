@@ -27,7 +27,7 @@
                     <a class="nav-link" href="index.php">Home</a>
                 </li>
                 <li <?php 
-                    if(basename($_SERVER['PHP_SELF']) == 'index.php'){
+                    if(basename($_SERVER['PHP_SELF']) == 'assignments.php'){
                        echo "class=\"nav-link active\"";
                     } else {
                         echo "class=\"nav-link\"";
@@ -36,11 +36,11 @@
                     <a class="nav-link" href="assignments.php">Assignments</a>
                 </li>
                 <li class="nav-item">
-                    <?php
+                    <a <?php
                         date_default_timezone_set('America/Boise'); // MDT
-                        $current_time = time();
+                        $current_time = date('H:i:s');
                         echo $current_time;
-                    ?>
+                    ?>></a>
                 </li>
             </ul>
         </div>
