@@ -36,11 +36,11 @@
                     <a class="nav-link" href="assignments.php">Assignments</a>
                 </li>
                 <li class="nav-item">
-                    <a <?php
+                    <?php
                         date_default_timezone_set('America/Boise'); // MDT
                         $current_time = date("H:i:s");
                         echo $current_time;
-                    ?>></a>
+                    ?>
                 </li>
             </ul>
         </div>
