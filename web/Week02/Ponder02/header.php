@@ -25,8 +25,8 @@
                 </li>
                 <li class="nav-item">
                     <?php
-                        date_default_timezone_set('America/Salt Lake City'); // MDT
-                        $current_date = date('d/m/Y == H:i:s');
+                        date_default_timezone_set('America/Boise'); // MDT
+                        $current_time = time();
                         echo $current_date;
                     ?>
                 </li>
