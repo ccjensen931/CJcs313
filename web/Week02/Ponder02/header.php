@@ -31,7 +31,7 @@
                     <?php
                         date_default_timezone_set('America/Boise'); // MDT
                         $current_time = time();
-                        echo $current_date;
+                        echo $current_time;
                     ?>
                 </li>
             </ul>
