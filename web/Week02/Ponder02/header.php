@@ -38,8 +38,7 @@
                 <li class="nav-item">
                     <a <?php
                         date_default_timezone_set('America/Boise'); // MDT
-                        $timestamp = time();
-                        $current_time = date("H:i:s", $timestamp);
+                        $current_time = date("H:i:s");
                         echo $current_time;
                     ?>></a>
                 </li>
