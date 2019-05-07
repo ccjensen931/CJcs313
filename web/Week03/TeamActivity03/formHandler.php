@@ -35,7 +35,7 @@
 
             echo 'You have visited: <br>';
             for ($i = 0; $i < $count; $i++)
-                echo ("     " . $continents_dictionary[$continents[$i]] . "<br>");
+                echo ("<pre>     </pre>" . $continents_dictionary[$continents[$i]] . "<br>");
         }?>
     Comments: <?php echo $_POST["comments"];?><br>
 </body>
