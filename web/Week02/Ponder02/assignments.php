@@ -18,6 +18,7 @@
     <ul>
         <li><a href="../../Week01/Ponder01/hello.html">Ponder 01</a></li>
         <li><a href="../../Week02/Ponder02/index.php">Ponder 02</a></li>
+        <li><a href="../../Week03/TeamActivity03/index.php">Team Activity 03</a></li>
     </ul>  
   </body>
 </html>
