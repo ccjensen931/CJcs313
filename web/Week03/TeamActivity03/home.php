@@ -48,7 +48,7 @@
                 . '">' . $major_name . '<br>';
         }?>
     </label>
-    </div>
+    </div><br>
 
     Select the continents you have visited: <br>
     <div class="form-check">
@@ -68,7 +68,7 @@
         <input type="checkbox" class="form-check-input" name="continents[]" id="AN" value="AN">
         Antarctica<br>
       </label>
-    </div>
+    </div><br>
     Comments: <div class="form-group">
       <label for="comments"></label>
       <textarea class="form-control" name="comments" id="comments" rows="3"></textarea>
