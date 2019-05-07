@@ -10,18 +10,18 @@
     Welcome <?php echo $_POST["name"];?><br>
     <?php $email = $_POST["email"];?><br>
     Your email address is: <a href="mailto:<?php echo $email;?>"><?php echo $email;?></a>
-    Your major is: <?php $major = $_POST["major"];
-                        if (strcmp($major, 'cs') == 0)
+    Your major is: <?php echo $_POST["major"];
+                        /* if (strcmp($major, 'cs') == 0)
                             echo 'Computer Science';
                         else if (strcmp($major, 'wdd') == 0)
                             echo 'Web Design and Development';
                         else if (strcmp($major, 'cit') == 0)
                             echo 'Computer Information Technology';
                         else if (strcmp($major, 'ce') == 0)
-                            echo 'Computer Engineering';?><br>
+                            echo 'Computer Engineering';*/?><br>
     <?php $continents = $_POST["continents"];
         if (empty($continents))
-            echo 'You have not visited planet Earth';
+            echo 'You have not visited planet Earth<br>';
         else
         {
             $count = count($continents);

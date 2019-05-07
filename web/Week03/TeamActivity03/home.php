@@ -22,19 +22,36 @@
       <input type="text" class="form-control" name="email" id="email" aria-describedby="helpId" placeholder="">
       <small id="helpId" class="form-text text-muted">Help text</small>
     </div>
-    Major: <div class="form-check">
+<!--     Major: <div class="form-check">
         <label class="form-check-label">
-        <input type="radio" class="form-check-input" name="major" id="major" value="cs">
+        <input type="radio" class="form-check-input" name="major" id="CS" value="Computer Science">
         Computer Science<br>
-        <input type="radio" class="form-check-input" name="major" id="major" value="wdd">
+        <input type="radio" class="form-check-input" name="major" id="WDD" value="Web Design and Development">
         Web Design and Development<br>
-        <input type="radio" class="form-check-input" name="major" id="major" value="cit">
+        <input type="radio" class="form-check-input" name="major" id="CIT" value="Computer Information Technology">
         Computer Information Technology<br>
-        <input type="radio" class="form-check-input" name="major" id="major" value="ce">
+        <input type="radio" class="form-check-input" name="major" id="CE" value="Computer Engineering">
         Computer Engineering<br>
       </label>
+    </div> -->
+
+    Major: <div class="form-check">
+    <label class="form-check-label">
+    <?php $majors = array("CS" => "Computer Science",
+        "WDD" => "Wed Design and Development",
+        "CIT" => "Computer Information Technology",
+        "CE" => "Computer Engineering");
+        
+        foreach($majors as $major => $major_name)
+        {
+            echo '<input type="radio" class="form-check-input" name="major" id="$major" value="$major_name">
+                $major_name<br>';
+        }?>
+    </label>
     </div>
-    <<div class="form-check">
+
+    Select the continents you have visited: <br>
+    <div class="form-check">
       <label class="form-check-label">
         <input type="checkbox" class="form-check-input" name="continents[]" id="continents" value="North America">
         North America<br>
