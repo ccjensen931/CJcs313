@@ -44,8 +44,8 @@
         
         foreach($majors as $major => $major_name)
         {
-            echo '<input type="radio" class="form-check-input" name="major" id="$major" value="$major_name">
-                $major_name<br>';
+            echo '<input type="radio" class="form-check-input" name="major" id="' . $major . '" value="' . $major_name
+                . '">' . $major_name . '<br>';
         }?>
     </label>
     </div>
