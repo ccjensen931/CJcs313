@@ -25,13 +25,31 @@
     Major: <div class="form-check">
         <label class="form-check-label">
         <input type="radio" class="form-check-input" name="major" id="major" value="cs">
-        Computer Science
+        Computer Science<br>
         <input type="radio" class="form-check-input" name="major" id="major" value="wdd">
-        Web Design and Development
+        Web Design and Development<br>
         <input type="radio" class="form-check-input" name="major" id="major" value="cit">
-        Computer Information Technology
+        Computer Information Technology<br>
         <input type="radio" class="form-check-input" name="major" id="major" value="ce">
-        Computer Engineering
+        Computer Engineering<br>
+      </label>
+    </div>
+    <<div class="form-check">
+      <label class="form-check-label">
+        <input type="checkbox" class="form-check-input" name="continents[]" id="continents" value="na">
+        North America<br>
+        <input type="checkbox" class="form-check-input" name="continents[]" id="continents" value="sa">
+        South America<br>
+        <input type="checkbox" class="form-check-input" name="continents[]" id="continents" value="eu">
+        Europe<br>
+        <input type="checkbox" class="form-check-input" name="continents[]" id="continents" value="as">
+        Asia<br>
+        <input type="checkbox" class="form-check-input" name="continents[]" id="continents" value="au">
+        Australia<br>
+        <input type="checkbox" class="form-check-input" name="continents[]" id="continents" value="af">
+        Africa<br>
+        <input type="checkbox" class="form-check-input" name="continents[]" id="continents" value="an">
+        Antarctica<br>
       </label>
     </div>
     Comments: <div class="form-group">
