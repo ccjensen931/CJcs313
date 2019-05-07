@@ -11,25 +11,26 @@
     <title>Team Activity 3</title>
 </head>
 <body>
+<form action="newPage.php" method="post">
     Name: <div class="form-group">
       <label for="name"></label>
       <input type="text" class="form-control" name="name" id="name" aria-describedby="helpId" placeholder="">
       <small id="helpId" class="form-text text-muted">Help text</small>
     </div>
-    Email: <<div class="form-group">
+    Email: <div class="form-group">
       <label for="email"></label>
       <input type="text" class="form-control" name="email" id="email" aria-describedby="helpId" placeholder="">
       <small id="helpId" class="form-text text-muted">Help text</small>
     </div>
     Major: <div class="form-check">
         <label class="form-check-label">
-        <input type="radio" class="form-check-input" name="cs" id="cs" value="checkedValue" checked>
+        <input type="radio" class="form-check-input" name="major" id="major" value="cs">
         Computer Science
-        <input type="radio" class="form-check-input" name="wdd" id="wdd" value="checkedValue" checked>
+        <input type="radio" class="form-check-input" name="major" id="major" value="wdd">
         Web Design and Development
-        <input type="radio" class="form-check-input" name="cit" id="cit" value="checkedValue" checked>
+        <input type="radio" class="form-check-input" name="major" id="major" value="cit">
         Computer Information Technology
-        <input type="radio" class="form-check-input" name="ce" id="ce" value="checkedValue" checked>
+        <input type="radio" class="form-check-input" name="major" id="major" value="ce">
         Computer Engineering
       </label>
     </div>
@@ -37,5 +38,7 @@
       <label for="comments"></label>
       <textarea class="form-control" name="comments" id="comments" rows="3"></textarea>
     </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
 </body>
 </html>
