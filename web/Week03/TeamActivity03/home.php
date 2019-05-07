@@ -11,7 +11,7 @@
     <title>Team Activity 3</title>
 </head>
 <body>
-<form action="newPage.php" method="post">
+<form action="formHandler.php" method="post">
     Name: <div class="form-group">
       <label for="name"></label>
       <input type="text" class="form-control" name="name" id="name" aria-describedby="helpId" placeholder="">
@@ -53,19 +53,19 @@
     Select the continents you have visited: <br>
     <div class="form-check">
       <label class="form-check-label">
-        <input type="checkbox" class="form-check-input" name="continents[]" id="continents" value="North America">
+        <input type="checkbox" class="form-check-input" name="continents[]" id="NA" value="NA">
         North America<br>
-        <input type="checkbox" class="form-check-input" name="continents[]" id="continents" value="South America">
+        <input type="checkbox" class="form-check-input" name="continents[]" id="SA" value="SA">
         South America<br>
-        <input type="checkbox" class="form-check-input" name="continents[]" id="continents" value="Europe">
+        <input type="checkbox" class="form-check-input" name="continents[]" id="EU" value="EU">
         Europe<br>
-        <input type="checkbox" class="form-check-input" name="continents[]" id="continents" value="Asia">
+        <input type="checkbox" class="form-check-input" name="continents[]" id="AS" value="AS">
         Asia<br>
-        <input type="checkbox" class="form-check-input" name="continents[]" id="continents" value="Australia">
+        <input type="checkbox" class="form-check-input" name="continents[]" id="AU" value="AU">
         Australia<br>
-        <input type="checkbox" class="form-check-input" name="continents[]" id="continents" value="Africa">
+        <input type="checkbox" class="form-check-input" name="continents[]" id="AF" value="AF">
         Africa<br>
-        <input type="checkbox" class="form-check-input" name="continents[]" id="continents" value="Antarctica">
+        <input type="checkbox" class="form-check-input" name="continents[]" id="AN" value="AN">
         Antarctica<br>
       </label>
     </div>

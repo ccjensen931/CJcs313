@@ -5,11 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>New Page</title>
+    <?php $continents_dictionary = array("NA" => "North America",
+        "SA" => "South America",
+        "EU" => "Europe",
+        "AS" => "Asia",
+        "AU" => "Australia",
+        "AF" => "Africa",
+        "AN" => "Antarctica");?>
 </head>
 <body>
     Welcome <?php echo $_POST["name"];?><br>
     <?php $email = $_POST["email"];?><br>
-    Your email address is: <a href="mailto:<?php echo $email;?>"><?php echo $email;?></a>
+    Your email address is: <a href="mailto:<?php echo $email;?>"><?php echo $email;?></a><br>
     Your major is: <?php echo $_POST["major"];
                         /* if (strcmp($major, 'cs') == 0)
                             echo 'Computer Science';
@@ -28,7 +35,7 @@
 
             echo 'You have visited: <br>';
             for ($i = 0; $i < $count; $i++)
-                echo ("     " . $continents[$i] . "<br>");
+                echo ("     " . $continents_dictionary[$continents[$i]] . "<br>");
         }?>
     Comments: <?php echo $_POST["comments"];?><br>
 </body>
