@@ -29,7 +29,7 @@
             echo 'You have visited: \n';
             for ($i = 0; $i < $count; $i++)
                 echo ("\t" . $continents[$i] . "\n");
-        }
+        }?>
     Comments: <?php echo $_POST["comments"];?><br>
 </body>
 </html>
