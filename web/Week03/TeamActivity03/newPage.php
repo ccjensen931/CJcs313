@@ -26,9 +26,9 @@
         {
             $count = count($continents);
 
-            echo 'You have visited: \n';
+            echo 'You have visited: <br>';
             for ($i = 0; $i < $count; $i++)
-                echo ("\t" . $continents[$i] . "\n");
+                echo ("     " . $continents[$i] . "<br>");
         }?>
     Comments: <?php echo $_POST["comments"];?><br>
 </body>

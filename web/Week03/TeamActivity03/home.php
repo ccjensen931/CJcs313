@@ -36,19 +36,19 @@
     </div>
     <<div class="form-check">
       <label class="form-check-label">
-        <input type="checkbox" class="form-check-input" name="continents[]" id="continents" value="na">
+        <input type="checkbox" class="form-check-input" name="continents[]" id="continents" value="North America">
         North America<br>
-        <input type="checkbox" class="form-check-input" name="continents[]" id="continents" value="sa">
+        <input type="checkbox" class="form-check-input" name="continents[]" id="continents" value="South America">
         South America<br>
-        <input type="checkbox" class="form-check-input" name="continents[]" id="continents" value="eu">
+        <input type="checkbox" class="form-check-input" name="continents[]" id="continents" value="Europe">
         Europe<br>
-        <input type="checkbox" class="form-check-input" name="continents[]" id="continents" value="as">
+        <input type="checkbox" class="form-check-input" name="continents[]" id="continents" value="Asia">
         Asia<br>
-        <input type="checkbox" class="form-check-input" name="continents[]" id="continents" value="au">
+        <input type="checkbox" class="form-check-input" name="continents[]" id="continents" value="Australia">
         Australia<br>
-        <input type="checkbox" class="form-check-input" name="continents[]" id="continents" value="af">
+        <input type="checkbox" class="form-check-input" name="continents[]" id="continents" value="Africa">
         Africa<br>
-        <input type="checkbox" class="form-check-input" name="continents[]" id="continents" value="an">
+        <input type="checkbox" class="form-check-input" name="continents[]" id="continents" value="Antarctica">
         Antarctica<br>
       </label>
     </div>
