@@ -18,6 +18,23 @@
     $_SESSION["Test"] = "This is a test.";
 ?>
 
+<div class="container">
+    <div class="row">
+        <div class="col-xs-1-12">
+            <p> Test 1.1 </p>
+            <p> Test 1.2 </p>
+            <p> Test 1.3 </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xs-1-12">
+            <p> Test 2.1 </p>
+            <p> Test 2.2 </p>
+            <p> Test 2.3 </p>
+        </div>
+    </div>
+</div>
+
 <div class="card">
     <img class="card-img-top" data-src="holder.js/100x180/?text=Image cap" alt="Card image cap">
     <div class="card-body">
