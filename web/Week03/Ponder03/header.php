@@ -33,7 +33,7 @@
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
             <div class="navbar-nav ml-2 mt-2 mt-lg-0">
-                <a class="nav-link" href="cart.php" style="margin-left:750px;margin-right:20px;">
+                <a class="nav-link" href="cart.php" style="margin-left:85%;margin-right:20px;">
                     <img src="Images/shopping_cart.png" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="" style="width:50px;height:50px;">
                     <?php
                         echo $count;
