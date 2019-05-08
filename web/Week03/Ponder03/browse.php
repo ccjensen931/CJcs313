@@ -46,9 +46,6 @@
         </div>
     </div>
 </div>
-<nav class="nav justify-content-center">
-  <a class="nav-link" href="cart.php">Cart</a>
-</nav>
 
 </body>
 </html>
