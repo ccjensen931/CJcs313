@@ -13,7 +13,7 @@
 
     <title>Navbar</title>
 </head>
-<body>b4-navbar
+<body>
     <nav class="navbar navbar-expand-sm navbar-light bg-light">
         <a class="navbar-brand" href="#">FunStuff.com</a>
         <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId"
@@ -21,7 +21,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="collapsibleNavId">
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <ul class="navbar-nav mr-auto mt-3 mt-lg-0">
                 <li class="nav-item active">
                     <a class="nav-link" href="browse.php">Browse Inventory<span class="sr-only">(current)</span></a>
                 </li>
