@@ -21,7 +21,7 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="collapsibleNavId">
-            <ul class="navbar-nav mr-auto mt-3 mt-lg-0">
+            <ul class="navbar-nav mr-auto mt-3">
                 <li class="nav-item active">
                     <a class="nav-link" href="browse.php">Browse Inventory<span class="sr-only">(current)</span></a>
                 </li>
