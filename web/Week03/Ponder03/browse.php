@@ -10,6 +10,10 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
+    <?php
+        include 'header.php';
+    ?>
+
     <title>Fun Stuff Store</title>
 </head>
 <body>
@@ -42,26 +46,6 @@
         </div>
     </div>
 </div>
-
-<div class="card">
-    <img class="card-img-top" data-src="holder.js/100x180/?text=Image cap" alt="Card image cap">
-    <div class="card-body">
-        <h4 class="card-title">Title</h4>
-        <p class="card-text">Text</p>
-    </div>
-    <ul class="list-group list-group-flush">
-        <li class="list-group-item">Item 1</li>
-        <li class="list-group-item">Item 2</li>
-        <li class="list-group-item">Item 3</li>
-    </ul>
-</div>
-
-<ul class="list-group">
-    <li class="list-group-item active">Active item</li>
-    <li class="list-group-item">Item</li>
-    <li class="list-group-item disabled">Disabled item</li>
-</ul>
-
 <nav class="nav justify-content-center">
   <a class="nav-link" href="cart.php">Cart</a>
 </nav>
