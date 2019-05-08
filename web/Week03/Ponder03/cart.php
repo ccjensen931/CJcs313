@@ -24,7 +24,8 @@
 
     foreach($items as $item)
     {
-        echo $item;
+        foreach($item as $i)
+            echo $i;
     }
 ?>
 
