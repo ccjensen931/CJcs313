@@ -22,7 +22,7 @@
         </button>
         <div class="collapse navbar-collapse" id="collapsibleNavId">
             <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-                <li class="nav-item active mt-2.5">
+                <li class="nav-item active mt-3">
                     <a class="nav-link" href="browse.php">Browse Inventory<span class="sr-only">(current)</span></a>
                 </li>
             <form class="form-inline my-2 my-lg-0">
