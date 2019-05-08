@@ -31,9 +31,9 @@
     //$_SESSION["Items"] = $items;
 ?>
 
-<div class="container">
+<!-- <div class="container">
     <?php
-        for ($i = 0; $i < $itemsSize; $i++)
+        /* for ($i = 0; $i < $itemsSize; $i++)
         {
             if ($i % 3 == 0 && $i != 0)
             {
@@ -52,34 +52,21 @@
             }
             echo '</p></div>';
         }
-        echo '</div>';
+        echo '</div>'; */
     ?>
-</div>
-
-<!-- <div class="container">
-    <div class="row">
-        <div class="col-4">
-            <p> Test 1.1 </p>
-        </div>
-        <div class="col-4">
-            <p> Test 1.2 </p>
-        </div>
-        <div class="col-4">
-            <p> Test 1.3 </p>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-4">
-            <p> Test 2.1 </p>
-        </div>
-        <div class="col-4">
-            <p> Test 2.2 </p>
-        </div>
-        <div class="col-4">
-            <p> Test 2.3 </p>
-        </div>
-    </div>
 </div> -->
+
+<div class="container">
+    <div class="row">
+        <div class="col-4">
+            <p> 
+                <img src="../../Week02/Ponder02/Images/Acoustic Guitar.jpg" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="" style="width:200px;height:200px;"><br> 
+                Acoustic Guitar <br>
+                $300.00
+            </p>
+        </div>
+    </div>
+</div>
 
 </body>
 </html>
