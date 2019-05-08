@@ -22,7 +22,7 @@
     $_SESSION["Test"] = "This is a test.";
     $items[0] = array('<image src=../Week02/Ponder02/Images/Acoustic Guitar.jpg class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="" style="width:50px;height:50px;">', "Guitar", "$300.00");
 
-    $_SESSION["Items"] =$items;
+    $_SESSION["Items"] = $items;
 ?>
 
 <div class="container">

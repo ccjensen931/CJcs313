@@ -19,7 +19,9 @@
 </head>
 <body>
     
-<?php echo $_SESSION["Test"]; ?>
+<?php 
+    echo $_SESSION["Items"];
+?>
 
 </body>
 </html>
