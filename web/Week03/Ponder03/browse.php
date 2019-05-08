@@ -26,32 +26,26 @@
     echo $items[0][1];
     echo $items[0][2];
 
-    $_SESSION["Items"] = $items;
+    //$_SESSION["Items"] = $items;
 ?>
 
 <div class="container">
-    <div class="row">
-        <div class="col-4">
-            <p> Test 1.1 </p>
-        </div>
-        <div class="col-4">
-            <p> Test 1.2 </p>
-        </div>
-        <div class="col-4">
-            <p> Test 1.3 </p>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-4">
-            <p> Test 2.1 </p>
-        </div>
-        <div class="col-4">
-            <p> Test 2.2 </p>
-        </div>
-        <div class="col-4">
-            <p> Test 2.3 </p>
-        </div>
-    </div>
+    <?php
+        foreach($items as $item)
+        {
+            echo '<div class="row">';
+            for ($i = 0; $i < 3; $i++)
+            {
+                echo '<div class="col-4">';
+                for ($j = 0; $j < 3; $j++)
+                {
+                    echo '<p>' . $item[$i] . '</p>';
+                }
+                echo '</div>';
+            }
+            echo '</div>';
+        }
+    ?>
 </div>
 
 </body>
