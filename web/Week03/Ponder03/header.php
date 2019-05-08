@@ -1,8 +1,8 @@
 <?php
     session_start();
 
-    $items = $_SESSION["Items"];
-    $count = count($item);
+    $items = $_SESSION["Cart"];
+    $count = count($items);
 ?>
 
 <!DOCTYPE html>

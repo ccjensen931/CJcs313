@@ -19,14 +19,12 @@
 <body>
     
 <?php
-    $_SESSION["Test"] = "This is a test.";
-    $items[0] = array('<img src="../../Week02/Ponder02/Images/Acoustic Guitar.jpg" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="" style="width:200px;height:200px;">', "Acoustic Guitar", "$300.00");
+    $items["Acoustic Guitar"] = array('<img src="../../Week02/Ponder02/Images/Acoustic Guitar.jpg" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="" style="width:200px;height:200px;">', "$300.00");
 
     $itemsSize = count($items);
 
-    echo $items[0][0];
-    echo $items[0][1];
-    echo $items[0][2];
+    $searchedTerm = $_POST["Search"];
+    $cart = $_POST["Cart"];
 
     //$_SESSION["Items"] = $items;
 ?>
@@ -64,6 +62,14 @@
                 Acoustic Guitar <br>
                 $300.00
             </p>
+            <form action="browse.php" method="post">
+                <div class="form-group">
+                    <label for="quantity">Quantity</label>
+                    <input type="text"
+                        class="form-control" name="Cart" id="acousticGuitar" aria-describedby="helpId" placeholder="">
+                    <button type="submit" class="btn btn-primary">Add to Cart</button>
+                </div>
+            </form>
         </div>
     </div>
 </div>
