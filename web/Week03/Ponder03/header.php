@@ -21,15 +21,15 @@
             <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="collapsibleNavId">
-            <ul class="navbar-nav mr-auto mt-3 mt-lg-0">
-                <li class="nav-item active">
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+                <li class="nav-item active mt-3">
                     <a class="nav-link" href="browse.php">Browse Inventory<span class="sr-only">(current)</span></a>
                 </li>
-            <form class="form-inline my-2 my-lg-0">
+            <form class="form-inline ml-2 my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="text" placeholder="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
-            <div class="navbar-nav ml-2 mt-2 mt-lg-0">
+            <div class="navbar-nav ml-20 mt-2 mt-lg-0">
                 <a class="nav-link" href="cart.php">
                     <img src="Images/shopping_cart.png" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="" style="width:50px;height:50px;">
                     Items
