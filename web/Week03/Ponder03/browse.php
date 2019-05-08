@@ -20,7 +20,9 @@
     
 <?php
     $_SESSION["Test"] = "This is a test.";
-    $items[0] = array('<img src="../../Week02/Ponder02/Images/Acoustic Guitar.jpg" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="" style="width:50px;height:50px;">', "Guitar", "$300.00");
+    $items[0] = array('<img src="../../Week02/Ponder02/Images/Acoustic Guitar.jpg" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="" style="width:200px;height:200px;">', "Guitar", "$300.00");
+
+    $itemsSize = count($items);
 
     echo $items[0][0];
     echo $items[0][1];
@@ -31,22 +33,53 @@
 
 <div class="container">
     <?php
-        foreach($items as $item)
+        for ($i = 0; $i < $itemsSize; $i++)
         {
-            echo '<div class="row">';
-            for ($i = 0; $i < 3; $i++)
+            if ($i % 3 == 0 && $i != 0)
             {
-                echo '<div class="col-4">';
-                for ($j = 0; $j < 3; $j++)
-                {
-                    echo '<p>' . $item[$i] . '</p>';
-                }
                 echo '</div>';
+                echo '<div class="row">';
+            }
+            elseif ($i == 0)
+            {
+                echo '<div class="row">';
+            }
+
+            echo '<div class="col-4">';
+            foreach ($item[$i] as $part)
+            {
+                echo '<p>' . $part . '</p>';
             }
             echo '</div>';
         }
+        echo '</div>';
     ?>
 </div>
+
+<!-- <div class="container">
+    <div class="row">
+        <div class="col-4">
+            <p> Test 1.1 </p>
+        </div>
+        <div class="col-4">
+            <p> Test 1.2 </p>
+        </div>
+        <div class="col-4">
+            <p> Test 1.3 </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-4">
+            <p> Test 2.1 </p>
+        </div>
+        <div class="col-4">
+            <p> Test 2.2 </p>
+        </div>
+        <div class="col-4">
+            <p> Test 2.3 </p>
+        </div>
+    </div>
+</div> -->
 
 </body>
 </html>
