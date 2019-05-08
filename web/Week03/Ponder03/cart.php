@@ -20,7 +20,12 @@
 <body>
     
 <?php 
-    echo $_SESSION["Items"];
+    $items = $_SESSION["Items"];
+
+    foreach($items as $item)
+    {
+        echo $item;
+    }
 ?>
 
 </body>
