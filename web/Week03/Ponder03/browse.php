@@ -20,7 +20,7 @@
     
 <?php
     $_SESSION["Test"] = "This is a test.";
-    $items[0] = array('<img src="../../Week02/Ponder02/Images/Acoustic Guitar.jpg" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="" style="width:200px;height:200px;">', "Guitar", "$300.00");
+    $items[0] = array('<img src="../../Week02/Ponder02/Images/Acoustic Guitar.jpg" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="" style="width:200px;height:200px;">', "Acoustic Guitar", "$300.00");
 
     $itemsSize = count($items);
 
@@ -45,12 +45,12 @@
                 echo '<div class="row">';
             }
 
-            echo '<div class="col-4">';
+            echo '<div class="col-4"><p>';
             foreach ($item[$i] as $part)
             {
-                echo '<p>' . $part . '</p>';
+                echo $part . '<br>';
             }
-            echo '</div>';
+            echo '</p></div>';
         }
         echo '</div>';
     ?>
