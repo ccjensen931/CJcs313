@@ -61,7 +61,7 @@
         <div class="col-4">
             <img src="../../Week02/Ponder02/Images/Acoustic Guitar.jpg" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="" style="width:200px;height:200px;">
             <p>
-                Acoustic Guitar
+                Acoustic Guitar <br>
                 $300.00
             </p>
         </div>
