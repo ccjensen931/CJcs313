@@ -59,9 +59,9 @@
 <div class="container">
     <div class="row">
         <div class="col-4">
-            <p> 
-                <img src="../../Week02/Ponder02/Images/Acoustic Guitar.jpg" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="" style="width:200px;height:200px;"><br> 
-                Acoustic Guitar <br>
+            <img src="../../Week02/Ponder02/Images/Acoustic Guitar.jpg" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="" style="width:200px;height:200px;">
+            <p>
+                Acoustic Guitar
                 $300.00
             </p>
         </div>
