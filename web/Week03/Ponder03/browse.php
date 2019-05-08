@@ -20,16 +20,24 @@
 
 <div class="container">
     <div class="row">
-        <div class="col-xs-1-12">
+        <div class="col-4">
             <p> Test 1.1 </p>
+        </div>
+        <div class="col-4">
             <p> Test 1.2 </p>
+        </div>
+        <div class="col-4">
             <p> Test 1.3 </p>
         </div>
     </div>
     <div class="row">
-        <div class="col-xs-1-12">
+        <div class="col-4">
             <p> Test 2.1 </p>
+        </div>
+        <div class="col-4">
             <p> Test 2.2 </p>
+        </div>
+        <div class="col-4">
             <p> Test 2.3 </p>
         </div>
     </div>
