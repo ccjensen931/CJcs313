@@ -3,6 +3,6 @@
     border-color: #d3d3d3;
 }
 
-.form-width {
+.form-inline .form-control {
     width: 25%;
 }
