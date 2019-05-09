@@ -27,8 +27,8 @@
 
     $itemsSize = count($items);
 
-    $searchedTerm = $_POST["Search"];
-    $cart = $_POST["Cart"];
+    //$searchedTerm = $_POST["Search"];
+    //$cart = $_POST["Cart"];
 
     //$_SESSION["Items"] = $items;
 ?>
