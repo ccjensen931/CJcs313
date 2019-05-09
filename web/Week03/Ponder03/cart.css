@@ -1,0 +1,8 @@
+.cart-item {
+    border: 2px solid;
+    border-color: #d3d3d3;
+}
+
+.form-inline .form-control {
+    width: 25%;
+}
