@@ -1,15 +1,15 @@
 <?php
     session_start();
 
-    $items["Acoustic Guitar"] = array('<img src="../../Week02/Ponder02/Images/Acoustic Guitar.jpg" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="" style="width:200px;height:200px;">', "300");
-    $items["Electric Guitar"] = array('<img src="Images/Electric Guitar.jpg" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="" style="width:200px;height:200px;">', "350");
-    $items["Xbox One"] = array('<img src="Images/Xbox One.jpg" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="" style="width:200px;height:200px;">', "299");
-    $items["PlayStation 4"] = array('<img src="Images/PS4.jpg" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="" style="width:200px;height:200px;">', "299");
-    $items["Nintendo Switch"] = array('<img src="Images/Nintendo Switch.jpg" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="" style="width:200px;height:200px;">', "299");
-    $items["Gaming PC"] = array('<img src="Images/Gaming PC.jpg" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="" style="width:200px;height:200px;">', "1300");
-    $items["CZ Scorpion"] = array('<img src="Images/CZ Scorpion.jpg" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="" style="width:200px;height:200px;">', "1500");
-    $items["AR-15"] = array('<img src="Images/AR15.jpg" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="" style="width:200px;height:200px;">', "900");
-    $items["P226"] = array('<img src="Images/P226.jpg" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="" style="width:300px;height:200px;">', "750");
+    $items["Acoustic Guitar"] = array("../../Week02/Ponder02/Images/Acoustic Guitar.jpg", "300");
+    $items["Electric Guitar"] = array("Images/Electric Guitar.jpg", "350");
+    $items["Xbox One"] = array("Images/Xbox One.jpg", "299");
+    $items["PlayStation 4"] = array("Images/PS4.jpg", "299");
+    $items["Nintendo Switch"] = array("Images/Nintendo Switch.jpg", "299");
+    $items["Gaming PC"] = array("Images/Gaming PC.jpg", "1300");
+    $items["CZ Scorpion"] = array("Images/CZ Scorpion.jpg", "1500");
+    $items["AR-15"] = array("Images/AR15.jpg", "900");
+    $items["P226"] = array("Images/P226.jpg", "750");
 
     $itemsSize = count($items);
 
@@ -81,7 +81,8 @@
 
         function displayItem($item, $data)
         {
-            echo '<div class="col-4">' . $data[0] . '<p>' . $item . '<br>$' . $data[1] . '.00</p>';
+            echo '<div class="col-4"><img src="' . $data[0] . '" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="" style="width:200px;height:200px;">
+            <p>' . $item . '<br>$' . $data[1] . '.00</p>';
             echo '<form action="browse.php" method="post">
                 <div class="form-group">
                     <label for="quantity">Quantity</label>
