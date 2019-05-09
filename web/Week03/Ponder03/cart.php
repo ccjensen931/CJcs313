@@ -63,8 +63,16 @@
             $sum += $data[1] * $data[2];
         }
 
-        echo '<div class="row align-items-center cart-item"><div class="col-9"> </div><div class="col-3">Total: $' . $sum . '</div></div>'; 
+        echo '<div class="row align-items-center cart-item"><div class="col-9"></div><div class="col-3">Total: $' . $sum . '</div></div>'; 
     ?>
+    <div class="row align-items-center cart-item">
+        <div class="col-9"></div>
+        <div class="col-3">
+            <a href="checkout.php">
+                <button type="button" class="btn btn-primary">Checkout</button>
+            </a>
+        </div>
+    </div>
 </div>
 </body>
 </html>
