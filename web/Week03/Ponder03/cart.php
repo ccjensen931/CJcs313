@@ -6,7 +6,10 @@
         $updateItemQuantity = $_POST["Item"];
         $itemQuantity = $_POST["Quantity"]
 
-        $_SESSION["Cart"][$updateItemQuantity][2] = $itemQuantity;
+        echo $updateItemQuantity;
+        echo $itemQuantity;
+
+        //$_SESSION["Cart"][$updateItemQuantity][2] = $itemQuantity;
     }
 
     $items = $_SESSION["Cart"];
