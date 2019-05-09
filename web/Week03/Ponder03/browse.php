@@ -22,6 +22,7 @@
         $newCartItem = $_POST["Cart"];
         echo 'New Item! ' . $_POST["Cart"];
         echo $_POST["Cart"][0];
+        echo $_POST["Cart"];
         
         $quantity = $_POST["Quantity"];
         if ($quantity < 1)
@@ -81,6 +82,8 @@
 
         function displayItem($item, $data)
         {
+            echo $item;
+
             echo '<div class="col-4">' . $data[0] . '<p>' . $item . '<br>' . $data[1] . '</p>';
             echo '<form action="browse.php" method="post">
                 <div class="form-group">
