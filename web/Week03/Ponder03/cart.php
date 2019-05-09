@@ -4,12 +4,12 @@
     if (isset($_POST["Item"]) && isset($_POST["Quantity"]))
     {
         $updateItemQuantity = $_POST["Item"];
-        $itemQuantity = $_POST["Quantity"]
+        $itemQuantity = $_POST["Quantity"];
 
         echo $updateItemQuantity;
         echo $itemQuantity;
 
-        //$_SESSION["Cart"][$updateItemQuantity][2] = $itemQuantity;
+        $_SESSION["Cart"][$updateItemQuantity][2] = $itemQuantity;
     }
 
     $items = $_SESSION["Cart"];
