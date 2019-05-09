@@ -1,7 +1,6 @@
 <?php
     session_start();
 
-    $search = false;
     $items = $_SESSION["Cart"];
 ?>
 
@@ -22,9 +21,23 @@
 </head>
 <body>
     
-<?php
-    include 'displayItems.php';
-?>
+<div class="container">
+    <?php
+        $i = 0;
 
+        echo '<div class="row">';
+        foreach($items as $item => $data)
+        {
+            if ($i == 3)
+            {
+                echo '</div><div class="row">';
+                $i = 0;
+            }
+
+            echo '<div class="col-4">' . $data[0] . '<p>' . $item . '<br>' . $data[1] . '</p>';
+        }
+        echo '</div>';
+    ?>
+</div>
 </body>
 </html>
