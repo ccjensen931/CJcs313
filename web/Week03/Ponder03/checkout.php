@@ -26,7 +26,7 @@
     <?php
         include 'address.php';
     ?>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <div class="container"><div class="row align-items-center"><button type="submit" class="btn btn-primary">Submit</button></div></div>
 </form>
 </body>
 </html

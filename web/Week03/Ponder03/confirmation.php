@@ -34,7 +34,7 @@
             <ul class="list-group">
                 <li class="list-group-item">
                 <?php
-                    echo $_POST["First Name"] . ' ' . $_POST["Last Name"] '<br>' . $_POST["Address 1"] . ' ' . $_POST["Address 2"]
+                    echo $_POST["First Name"] . ' ' . $_POST["Last Name"] . '<br>' . $_POST["Address 1"] . ' ' . $_POST["Address 2"]
                     . '<br>' . $_POST["City"] . ', ' . $_POST["State"] . ' ' . $_POST["Country"];
                 ?>
                 </li>
