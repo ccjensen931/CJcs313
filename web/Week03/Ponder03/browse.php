@@ -9,14 +9,23 @@
 
     $itemsSize = count($items);
 
-    $searchedTerm = $_POST["Search"];
-    $newCartItem = $_POST["Cart"];
-
-    if(!isset($_SESSION["Cart"]))
+    $search = false;
+    if(isset($_POST["Search"]))
     {
-        $_SESSION["Cart"] = array();
+        $searchedTerm = $_POST["Search"];
+        $search = true;
     }
-    $_SESSION["Cart"][$newCartItem] = $items[$newCartItem];
+
+    if (isset($_POST["Cart"]))
+    {
+        $newCartItem = $_POST["Cart"];
+
+        if(!isset($_SESSION["Cart"]))
+        {
+            $_SESSION["Cart"] = array();
+        }
+        $_SESSION["Cart"][$newCartItem] = $items[$newCartItem];    
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -47,21 +56,30 @@
                 $i = 0;
             }
 
-            if (strpos($item, $searchedTerm) !== false)
+            if ($search && strpos($item, $searchedTerm) !== false)
             {
-                echo '<div class="col-4">' . $data[0] . '<p>' . $item . '<br>' . $data[1] . '</p>';
-                echo '<form action="browse.php" method="post">
-                    <div class="form-group">
-                        <label for="quantity">Quantity</label>
-                        <input type="text"
-                            class="form-control" name="Cart" id="' . $item . '" aria-describedby="helpId" placeholder="">
-                        <button type="submit" class="btn btn-primary">Add to Cart</button>
-                    </div>
-                </form></div>';
-                $i++;
+                displayItem($item, $data);
+            }
+            else if (!$search)
+            {
+                displayItem($item, $data);
             }
         }
         echo '</div>';
+
+        function displayItem($item, $data)
+        {
+            echo '<div class="col-4">' . $data[0] . '<p>' . $item . '<br>' . $data[1] . '</p>';
+            echo '<form action="browse.php" method="post">
+                <div class="form-group">
+                    <label for="quantity">Quantity</label>
+                    <input type="text"
+                        class="form-control" name="Cart" id="' . $item . '" aria-describedby="helpId" placeholder="">
+                    <button type="submit" class="btn btn-primary">Add to Cart</button>
+                </div>
+            </form></div>';
+            $i++;
+        }
     ?>
 </div>
 </body>
