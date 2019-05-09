@@ -1,5 +1,8 @@
 <?php
     session_start();
+
+    $search = false;
+    $items = $_SESSION["Cart"];
 ?>
 
 <!DOCTYPE html>
@@ -15,18 +18,12 @@
         include 'header.php';
     ?>
     
-    <title>Document</title>
+    <title>Cart</title>
 </head>
 <body>
     
-<?php 
-    $items = $_SESSION["Items"];
-
-    foreach($items as $item)
-    {
-        foreach($item as $i)
-            echo $i;
-    }
+<?php
+    include 'displayItems.php';
 ?>
 
 </body>
