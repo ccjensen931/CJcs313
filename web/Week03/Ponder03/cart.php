@@ -1,6 +1,14 @@
 <?php
     session_start();
 
+    if (isset($_POST["Item"]) && isset($_POST["Quantity"]))
+    {
+        $updateItemQuantity = $_POST["Item"];
+        $itemQuantity = $_POST["Quantity"]
+
+        $_SESSION["Cart"][$updateItemQuantity][2] = $itemQuantity;
+    }
+
     $items = $_SESSION["Cart"];
 
     if (isset($_POST["Cart"]))
@@ -44,8 +52,11 @@
 
         foreach($items as $item => $data)
         {
-            echo '<div class="row align-items-center cart-item"><div class="col">' . $data[0] . '</div><div class="col">Name: ' . $item . '</div><div class="col">Quantity: ' . $data[2] . '</div><div class="col">Price: $' . $data[1]. '</div>';
-            echo '<div class="col"><form action="cart.php" method="post"><input type="hidden" name="Cart" id="' . $item . '" value="' . $item . '" placeholder=""><button type="submit" class="btn btn-danger">Remove From Cart</button></form></div></div>';
+            echo '<div class="row align-items-center cart-item"><div class="col">' . $data[0] . '</div><div class="col">Name: ' . $item . '</div><div class="col"><form class="form-inline" action="cart.php" method="post">
+            <div class="form-group"><label for="Quantity">Quantity:</label><input type="hidden" name="Item" id="' . $item . '" value="' . $item . '" placeholder="">
+            <input type="text" name="Quantity" id="' . $item . '" class="form-control" value="' . $data[2] . '" placeholder="' . $data[2] . '" aria-describedby="helpId"></div><button type="submit" class="btn btn-danger">
+            Save</button></form></div><div class="col">Price: $' . $data[1]. '</div>''<div class="col"><form action="cart.php" method="post"><input type="hidden" name="Cart" id="' . $item . '" value="' . $item . '" placeholder="">
+            <button type="submit" class="btn btn-danger">Remove From Cart</button></form></div></div>';
             $sum += $data[1] * $data[2];
         }
 
