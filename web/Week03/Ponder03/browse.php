@@ -20,7 +20,7 @@
     if (isset($_POST["Cart"]))
     {
         $newCartItem = $_POST["Cart"];
-        echo 'New Item! ' . $newCartItem;
+        echo 'New Item! ' . $_POST["Cart"];
         
         $quantity = $_POST["Quantity"];
         if ($quantity < 1)
