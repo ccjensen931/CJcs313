@@ -21,22 +21,15 @@
 </head>
 <body>
     
-<div class="container">
+<ul class="list-group">
     <?php
         $i = 0;
 
-        echo '<div class="row">';
         foreach($items as $item => $data)
         {
-            if ($i == 3)
-            {
-                echo '</div><div class="row">';
-                $i = 0;
-            }
-
-            echo '<div class="col-4">' . $data[0] . '<p>' . $item . '<br>' . $data[1] . '<br>Quantity: ' . $data[2] . '</p>';
+            echo '<li class="list-group-item">' . $data[0] . ' Name: ' . $item . '<br> Price: ' . $data[1] . '<br> Quantity: ' . $data[2] . '</li>';
         }
-        echo '</div>';
+        echo '</ul>';
     ?>
 </div>
 </body>
