@@ -8,8 +8,8 @@
         $cart = $_SESSION["Cart"];
         foreach($cart as $item => $data)
         {
-            echo 'data[2]';
-            $count += data[2];
+            echo '$data[2]';
+            $count += $data[2];
         }
     }
 ?>
