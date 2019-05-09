@@ -12,6 +12,7 @@
     $search = false;
     if(isset($_POST["Search"]))
     {
+        echo 'Search is set!';
         $searchedTerm = $_POST["Search"];
         $search = true;
     }
@@ -19,9 +20,11 @@
     if (isset($_POST["Cart"]))
     {
         $newCartItem = $_POST["Cart"];
+        echo 'New Item! ' . $newCartItem;
 
         if(!isset($_SESSION["Cart"]))
         {
+            echo 'Session["Cart"] is not set!';
             $_SESSION["Cart"] = array();
         }
         $_SESSION["Cart"][$newCartItem] = $items[$newCartItem];    
