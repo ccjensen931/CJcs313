@@ -34,7 +34,7 @@
                 $i = 0;
             }
 
-            echo '<div class="col-4">' . $data[0] . '<p>' . $item . '<br>' . $data[1] . '</p>';
+            echo '<div class="col-4">' . $data[0] . '<p>' . $item . '<br>' . $data[1] . '<br>Quantity: ' . $data[2] . '</p>';
         }
         echo '</div>';
     ?>

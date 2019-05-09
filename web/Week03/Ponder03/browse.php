@@ -12,7 +12,6 @@
     $search = false;
     if(isset($_POST["Search"]))
     {
-        echo 'Search is set!' . $_POST["Search"];
         $searchedTerm = $_POST["Search"];
         $search = true;
     }
@@ -20,20 +19,15 @@
     if (isset($_POST["Cart"]))
     {
         $newCartItem = $_POST["Cart"];
-        echo 'New Item! ' . $_POST["Cart"];
-        echo $_POST["Cart"][0];
-        echo $_POST["Cart"];
         
         $quantity = $_POST["Quantity"];
         if ($quantity < 1)
         {
             $quantity = 1;   
         }
-        echo 'Quantity: ' . $quantity;
 
         if(!isset($_SESSION["Cart"]))
         {
-            echo 'Session["Cart"] is not set!';
             $_SESSION["Cart"] = array();
         }
         $_SESSION["Cart"][$newCartItem] = $items[$newCartItem];
@@ -83,8 +77,6 @@
 
         function displayItem($item, $data)
         {
-            echo $item;
-
             echo '<div class="col-4">' . $data[0] . '<p>' . $item . '<br>' . $data[1] . '</p>';
             echo '<form action="browse.php" method="post">
                 <div class="form-group">
