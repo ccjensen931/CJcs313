@@ -27,6 +27,7 @@
         {
             $quantity = 1;   
         }
+        echo 'Quantity: ' . $quantity;
 
         if(!isset($_SESSION["Cart"]))
         {
