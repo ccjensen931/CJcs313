@@ -30,7 +30,7 @@
                 </li>
             </ul>
             <form action="browse.php" method="post" class="form-inline ml-3 my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search">
+                <input class="form-control mr-sm-2" type="text" name="Search" placeholder="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
             </form>
             <div class="navbar-nav mt-2 mt-lg-0">
