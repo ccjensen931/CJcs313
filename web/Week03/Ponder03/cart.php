@@ -13,7 +13,7 @@
         }
         else
         {
-            \unset($_SESSION["Cart"][$deleteCartItem]);
+            unset($_SESSION["Cart"][$deleteCartItem]);
         }
     }
 

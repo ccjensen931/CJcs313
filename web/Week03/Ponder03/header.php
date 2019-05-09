@@ -2,7 +2,12 @@
     session_start();
 
     $cart = $_SESSION["Cart"];
-    $count = count($cart);
+    $count; // = count($cart);
+
+    foreach($cart as $item => $data)
+    {
+        $count += data[2];
+    }
 ?>
 
 <!DOCTYPE html>
