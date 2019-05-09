@@ -83,7 +83,7 @@
             echo '<form action="browse.php" method="post">
                 <div class="form-group">
                     <label for="quantity">Quantity</label>
-                    <input type="hidden" name="Cart" id="' . $item . ' value="' . $item . ' placeholder="">
+                    <input type="hidden" name="Cart" id="' . $item . ' value="' . $item . '" placeholder="">
                     <input type="text"
                         class="form-control" name="Quantity" id="' . $item . ' Quantity" aria-describedby="helpId" placeholder="">
                     <button type="submit" class="btn btn-primary">Add to Cart</button>
