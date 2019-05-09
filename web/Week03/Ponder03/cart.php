@@ -28,7 +28,7 @@
 
         foreach($items as $item => $data)
         {
-            echo '<div class="row align-items-center cart-item"><div class="col">' . $data[0] . '</div><div class="col">Name: ' . $item . '</div><div class="col">Quantity: ' . $data[2] . '</div><div class="col">Price: ' . $data[1]. '</div></div>';
+            echo '<div class="row align-items-center cart-item"><div class="col">' . $data[0] . '</div><div class="col">Name: ' . $item . '</div><div class="col">Quantity: ' . $data[2] . '</div><div class="col">Price: $' . $data[1]. '</div></div>';
             $sum += $data[1] * $data[2];
         }
 
