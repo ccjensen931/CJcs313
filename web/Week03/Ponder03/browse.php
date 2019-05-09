@@ -20,9 +20,18 @@
     
 <?php
     $_SESSION["Test"] = "This is a test.";
+    $items[0] = array('<image src=../Week02/Ponder02/Images/Acoustic Guitar.jpg class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="" style="width:50px;height:50px;">', "Guitar", "$300.00");
+
+    $_SESSIOn["Items"] =$items;
 ?>
 
 <div class="container">
+    <?php
+        $i = 0;
+
+        for($items as $item)
+    ?>
+    
     <div class="row">
         <div class="col-4">
             <p> Test 1.1 </p>
