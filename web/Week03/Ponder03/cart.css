@@ -1,5 +1,19 @@
 .cart-item {
+    border-top: 2px solid;
+    border-left: 2px solid;
+    border-right: 2px solid;
+    border-color: #d3d3d3;
+}
+
+.total {
     border: 2px solid;
+    border-color: #d3d3d3;
+}
+
+.checkout {
+    border-bottom: 2px solid;
+    border-left: 2px solid;
+    border-right: 2px solid;
     border-color: #d3d3d3;
 }
 

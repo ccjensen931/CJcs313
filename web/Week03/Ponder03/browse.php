@@ -81,7 +81,7 @@
 
         function displayItem($item, $data)
         {
-            echo '<div class="col-4">' . $data[0] . '<p>' . $item . '<br>$' . $data[1] . '</p>';
+            echo '<div class="col-4">' . $data[0] . '<p>' . $item . '<br>$' . $data[1] . '.00</p>';
             echo '<form action="browse.php" method="post">
                 <div class="form-group">
                     <label for="quantity">Quantity</label>

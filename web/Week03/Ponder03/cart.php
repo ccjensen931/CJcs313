@@ -55,21 +55,19 @@
             echo '<div class="row align-items-center cart-item"><div class="col">' . $data[0] . '</div><div class="col">Name: ' . $item . '</div><div class="col">Quantity: <form class="form-inline" action="cart.php" method="post">
             <div class="form-group"><input type="hidden" name="Item" id="' . $item . '" value="' . $item . '" placeholder="">
             <input type="text" name="Quantity" id="' . $item . '" class="form-control ml-1" value="' . $data[2] . '" placeholder="' . $data[2] . '" aria-describedby="helpId"></div><button type="submit" class="btn btn-danger">
-            Save</button></form></div><div class="col">Price: $' . $data[1] . '</div><div class="col"><form action="cart.php" method="post"><input type="hidden" name="Cart" id="' . $item . '" value="' . $item . '" placeholder="">
+            Save</button></form></div><div class="col">Price: $' . $data[1] . '.00</div><div class="col"><form action="cart.php" method="post"><input type="hidden" name="Cart" id="' . $item . '" value="' . $item . '" placeholder="">
             <button type="submit" class="btn btn-danger">Remove From Cart</button></form></div></div>';
             $sum += $data[1] * $data[2];
         }
 
-        echo '<div class="row align-items-center cart-item"><div class="col-10"></div><div class="col-2">Total: $' . $sum . '</div></div>';
+        echo '<div class="row align-items-center total"><div class="col-10"></div><div class="col-2">Total: $' . $sum . '</div></div>';
+    
+        if (count($items) > 0)
+        {
+            echo '<div class="row align-items-center checkout"><div class="col-10"></div><div class="col-2"><a href="checkout.php">
+                <button type="button" class="btn btn-primary">Checkout</button></a></div></div>';
+        }
     ?>
-    <div class="row align-items-center cart-item">
-        <div class="col-10"></div>
-        <div class="col-2">
-            <a href="checkout.php">
-                <button type="button" class="btn btn-primary">Checkout</button>
-            </a>
-        </div>
-    </div>
 </div>
 </body>
 </html>
