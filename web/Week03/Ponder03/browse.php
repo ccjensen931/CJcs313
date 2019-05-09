@@ -21,6 +21,7 @@
     {
         $newCartItem = $_POST["Cart"];
         echo 'New Item! ' . $_POST["Cart"];
+        echo $_POST["Cart"][0];
         
         $quantity = $_POST["Quantity"];
         if ($quantity < 1)
