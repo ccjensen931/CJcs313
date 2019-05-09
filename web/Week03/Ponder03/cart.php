@@ -23,14 +23,17 @@
     
 <ul class="list-group">
     <?php
-        $i = 0;
+        $sum = 0;
 
         foreach($items as $item => $data)
         {
-            echo '<li class="list-group-item">' . $data[0] . ' Name: ' . $item . '<br> Price: ' . $data[1] . '<br> Quantity: ' . $data[2] . '</li>';
+            echo '<li class="list-group-item">' . $data[0] . ' Name: ' . $item . '     Price: ' . $data[1] . '     Quantity: ' . $data[2] . '</li>';
+            $sum += $data[1] * $data[2];
         }
-        echo '</ul>';
+
+        echo '<li class="list-group-item"> Total: $' . $sum; 
     ?>
+</ul>
 </div>
 </body>
 </html>

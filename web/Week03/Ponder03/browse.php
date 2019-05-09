@@ -1,11 +1,11 @@
 <?php
     session_start();
 
-    $items["Acoustic Guitar"] = array('<img src="../../Week02/Ponder02/Images/Acoustic Guitar.jpg" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="" style="width:200px;height:200px;">', "$300.00");
-    $items["Electric Guitar"] = array('<img src="Images/Electric Guitar.jpg" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="" style="width:200px;height:200px;">', "$350.00");
-    $items["Xbox One"] = array('<img src="Images/Xbox One.jpg" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="" style="width:200px;height:200px;">', "$299.00");
-    $items["PlayStation 4"] = array('<img src="Images/PS4.jpg" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="" style="width:200px;height:200px;">', "$299.00");
-    $items["Nintendo Switch"] = array('<img src="Images/Nintendo Switch.jpg" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="" style="width:200px;height:200px;">', "$299.00");
+    $items["Acoustic Guitar"] = array('<img src="../../Week02/Ponder02/Images/Acoustic Guitar.jpg" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="" style="width:200px;height:200px;">', "300.00");
+    $items["Electric Guitar"] = array('<img src="Images/Electric Guitar.jpg" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="" style="width:200px;height:200px;">', "350.00");
+    $items["Xbox One"] = array('<img src="Images/Xbox One.jpg" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="" style="width:200px;height:200px;">', "299.00");
+    $items["PlayStation 4"] = array('<img src="Images/PS4.jpg" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="" style="width:200px;height:200px;">', "299.00");
+    $items["Nintendo Switch"] = array('<img src="Images/Nintendo Switch.jpg" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="" style="width:200px;height:200px;">', "299.00");
 
     $itemsSize = count($items);
 
@@ -77,7 +77,7 @@
 
         function displayItem($item, $data)
         {
-            echo '<div class="col-4">' . $data[0] . '<p>' . $item . '<br>' . $data[1] . '</p>';
+            echo '<div class="col-4">' . $data[0] . '<p>' . $item . '<br>$' . $data[1] . '</p>';
             echo '<form action="browse.php" method="post">
                 <div class="form-group">
                     <label for="quantity">Quantity</label>
