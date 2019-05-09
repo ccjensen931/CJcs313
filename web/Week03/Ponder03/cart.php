@@ -21,18 +21,19 @@
 </head>
 <body>
     
-<ul class="list-group">
+<div class="container">
     <?php
         $sum = 0;
 
         foreach($items as $item => $data)
         {
-            echo '<li class="list-group-item">' . $data[0] . ' Name: ' . $item . '     Price: ' . $data[1] . '     Quantity: ' . $data[2] . '</li>';
+            echo '<div class="row"><div class="col-3">' . $data[0] . '</div><div class="col-3">Name: ' . $item . '</div><div class="col-3">Price: ' . $data[1]. '</div><div class="col-3">Quantity: ' . $data[2] . '</div></div>';
             $sum += $data[1] * $data[2];
         }
 
-        echo '<li class="list-group-item"> Total: $' . $sum; 
+        echo '<div class="row"><div class="col-9"> </div><div class="col-3">Total: $' . $sum . '</div></div>'; 
     ?>
+</div>
 </ul>
 </div>
 </body>
