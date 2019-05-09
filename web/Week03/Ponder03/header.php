@@ -3,7 +3,7 @@
 
     $count = 0; // = count($cart);
 
-    if (isset($_POST["Cart"]))
+    if (isset($_SESSION["Cart"]))
     {
         $cart = $_SESSION["Cart"];
         foreach($cart as $item => $data)

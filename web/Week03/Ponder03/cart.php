@@ -14,6 +14,7 @@
         else
         {
             unset($_SESSION["Cart"][$deleteCartItem]);
+            header("Refresh:0");
         }
     }
 
