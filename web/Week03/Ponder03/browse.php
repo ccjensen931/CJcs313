@@ -8,8 +8,8 @@
     $items["Nintendo Switch"] = array('<img src="Images/Nintendo Switch.jpg" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="" style="width:200px;height:200px;">', "299.00");
     $items["Gaming PC"] = array('<img src="Images/Gaming PC.jpg" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="" style="width:200px;height:200px;">', "1,300.00");
     $items["CZ Scorpion"] = array('<img src="Images/CZ Scorpion.jpg" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="" style="width:200px;height:200px;">', "1,500.00");
-    $items["AR-15"] = array('<img src="Images/AR15.jpg" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="" style="width:200px;height:200px;">', "1,100.00");
-    $itmes["P226"] = array('<img src="Images/P226.jpg" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="" style="width:200px;height:200px;">', "750.00");
+    $items["AR-15"] = array('<img src="Images/AR15.jpg" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="" style="width:200px;height:200px;">', "900.00");
+    $items["P226"] = array('<img src="Images/P226.jpg" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="" style="width:200px;height:200px;">', "750.00");
 
     $itemsSize = count($items);
 

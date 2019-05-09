@@ -1,12 +1,16 @@
 <?php
     session_start();
 
-    $cart = $_SESSION["Cart"];
-    $count; // = count($cart);
+    $count = 0; // = count($cart);
 
-    foreach($cart as $item => $data)
+    if (isset($_POST["Cart"]))
     {
-        $count += data[2];
+        $cart = $_SESSION["Cart"];
+        foreach($cart as $item => $data)
+        {
+            echo 'data[2]';
+            $count += data[2];
+        }
     }
 ?>
 
