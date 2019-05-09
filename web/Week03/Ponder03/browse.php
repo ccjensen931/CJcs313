@@ -20,6 +20,10 @@
     
 <?php
     $items["Acoustic Guitar"] = array('<img src="../../Week02/Ponder02/Images/Acoustic Guitar.jpg" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="" style="width:200px;height:200px;">', "$300.00");
+    $items["Electric Guitar"] = array('<img src="Images/Electric Guitar.jpg" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="" style="width:200px;height:200px;">', "$350.00");
+    $items["Xbox One"] = array('<img src="Images/Xbox One.jpg" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="" style="width:200px;height:200px;">', "$299.00");
+    $items["PlayStation 4"] = array('<img src="Images/PS4.jpg" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="" style="width:200px;height:200px;">', "$299.00");
+    $items["Nintendo Switch"] = array('<img src="Images/Nintendo Switch.jpg" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="" style="width:200px;height:200px;">', "$299.00");)
 
     $itemsSize = count($items);
 
@@ -29,32 +33,36 @@
     //$_SESSION["Items"] = $items;
 ?>
 
-<!-- <div class="container">
-    <?php
-        /* for ($i = 0; $i < $itemsSize; $i++)
-        {
-            if ($i % 3 == 0 && $i != 0)
-            {
-                echo '</div>';
-                echo '<div class="row">';
-            }
-            elseif ($i == 0)
-            {
-                echo '<div class="row">';
-            }
-
-            echo '<div class="col-4"><p>';
-            foreach ($item[$i] as $part)
-            {
-                echo $part . '<br>';
-            }
-            echo '</p></div>';
-        }
-        echo '</div>'; */
-    ?>
-</div> -->
-
 <div class="container">
+    <?php
+        $i = 0;
+
+        echo '<div class="row">';
+        foreach($items as $item => $data)
+        {
+            if ($i == 3)
+            {
+                echo '</div><div class="row">';
+                $i = 0;
+            }
+
+            echo '<div class="col-4">' . $data[0] . '<p>' . $data[1] . '</p>';
+            echo '<form action="browse.php" method="post">
+                <div class="form-group">
+                    <label for="quantity">Quantity</label>
+                    <input type="text"
+                        class="form-control" name="Cart" id="' . $item . '" aria-describedby="helpId" placeholder="">
+                    <button type="submit" class="btn btn-primary">Add to Cart</button>
+                </div>
+            </form></div>';
+
+            $i++;
+        }
+        echo '</div>';
+    ?>
+</div>
+
+<!-- <div class="container">
     <div class="row">
         <div class="col-4">
             <img src="../../Week02/Ponder02/Images/Acoustic Guitar.jpg" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="" style="width:200px;height:200px;">
@@ -72,7 +80,7 @@
             </form>
         </div>
     </div>
-</div>
+</div> -->
 
 </body>
 </html>
