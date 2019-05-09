@@ -12,7 +12,7 @@
     $search = false;
     if(isset($_POST["Search"]))
     {
-        echo 'Search is set!';
+        echo 'Search is set!' . $_POST["Search"];
         $searchedTerm = $_POST["Search"];
         $search = true;
     }
