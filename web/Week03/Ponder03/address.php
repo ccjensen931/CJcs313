@@ -14,21 +14,21 @@
     <div class="container">
         <div class="row">
             <div class="col-6">
-                First Name <input type="text" name="First Name" id="First Name" class="form-control" placeholder="" aria-describedby="helpId" required>
+                First Name <input type="text" name="First_Name" id="First_Name" class="form-control" placeholder="" aria-describedby="helpId" required>
             </div>
             <div class="col-6">
-                Last Name <input type="text" name="Last Name" id="Last Name" class="form-control" placeholder="" aria-describedby="helpId" required>
+                Last Name <input type="text" name="Last_Name" id="Last_Name" class="form-control" placeholder="" aria-describedby="helpId" required>
             </div>
         </div>
         <div class="row">
             Email <input type="text" name="Email" id="Email" class="form-control" placeholder="" aria-describedby="helpId" required>
         </div>
         <div class="row">
-            Address <input type="text" name="Address 1" id="Address 1" class="form-control" placeholder="" aria-describedby="helpId" required>
+            Address <input type="text" name="Address_1" id="Address_1" class="form-control" placeholder="" aria-describedby="helpId" required>
         </div>
         <div class="row">
             <div class="col-8">
-                Address 2 (Optional) <input type="text" name="Address 2" id="Address 2" class="form-control" placeholder="" aria-describedby="helpId">
+                Address 2 (Optional) <input type="text" name="Address_2" id="Address_2" class="form-control" placeholder="" aria-describedby="helpId">
             </div>
             <div class="col-4">
                 City <input type="text" name="City" id="City" class="form-control" placeholder="" aria-describedby="helpId" required>
@@ -36,7 +36,7 @@
         </div>
         <div class="row">
             <div class="col-3">
-                Zip Code <input type="text" name="Zip Code" id="Zip Code" class="form-control" placeholder="" aria-describedby="helpId" required>
+                Zip Code <input type="text" name="Zip_Code" id="Zip_Code" class="form-control" placeholder="" aria-describedby="helpId" required>
             </div>
             <div class="col-4">
                 State <input type="text" name="State" id="State" class="form-control" placeholder="" aria-describedby="helpId" required>

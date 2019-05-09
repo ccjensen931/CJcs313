@@ -46,7 +46,7 @@
                     foreach($items as $item => $itemData)
                     {
                         echo '<li class="list-group-item"><div class="container"><div class="row"><div class="col-4">
-                        <img src="' . $data[0] . '" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="" style="width:50px;height:50px;">
+                        <img src="' . $itemData[0] . '" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="" style="width:50px;height:50px;">
                         </div><div class="col-8">' . $item . '<br>Quantity: ' . $itemData[2] . '<br>Price Per Unit: $' . $itemData[1] . 
                         '.00</div></div></div></li>';
                     }
@@ -58,7 +58,7 @@
         <div class="col-9"></div>
         <div class="col-3">
             <a href="browse.php">
-                <<button type="button" class="btn btn-primary">Continue Shopping</button>
+                <button type="button" class="btn btn-primary">Continue Shopping</button>
             </a>
         </div>
     </div>
