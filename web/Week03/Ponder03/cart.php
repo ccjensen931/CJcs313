@@ -27,14 +27,14 @@
 
         foreach($items as $item => $data)
         {
-            echo '<div class="row"><div class="col-3">' . $data[0] . '</div><div class="col-3">Name: ' . $item . '</div><div class="col-3">Price: ' . $data[1]. '</div><div class="col-3">Quantity: ' . $data[2] . '</div></div>';
+            echo '<div class="row"><div class="col">' . $data[0] . '</div><div class="col">Name: ' . $item . '</div><div class="col">Quantity: ' . $data[2] . '</div><div class="col">Price: ' . $data[1]. '</div></div>';
             $sum += $data[1] * $data[2];
         }
 
         echo '<div class="row"><div class="col-9"> </div><div class="col-3">Total: $' . $sum . '</div></div>'; 
     ?>
 </div>
-</ul>
-</div>
 </body>
 </html>
+
+b4-
