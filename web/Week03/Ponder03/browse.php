@@ -21,13 +21,20 @@
     {
         $newCartItem = $_POST["Cart"];
         echo 'New Item! ' . $newCartItem;
+        
+        $quantity = $_POST["Quantity"];
+        if ($quantity < 1)
+        {
+            $quantity = 1;   
+        }
 
         if(!isset($_SESSION["Cart"]))
         {
             echo 'Session["Cart"] is not set!';
             $_SESSION["Cart"] = array();
         }
-        $_SESSION["Cart"][$newCartItem] = $items[$newCartItem];    
+        $_SESSION["Cart"][$newCartItem] = $items[$newCartItem];
+        array_push($_SESSION["Cart"][$newCartItem], $quantity);
     }
 ?>
 <!DOCTYPE html>
@@ -76,8 +83,9 @@
             echo '<form action="browse.php" method="post">
                 <div class="form-group">
                     <label for="quantity">Quantity</label>
+                    <input type="hidden" name="Cart" id="' . $item . ' value="' . $item . ' placeholder="">
                     <input type="text"
-                        class="form-control" name="Cart" id="' . $item . '" aria-describedby="helpId" placeholder="">
+                        class="form-control" name="Quantity" id="' . $item . ' Quantity" aria-describedby="helpId" placeholder="">
                     <button type="submit" class="btn btn-primary">Add to Cart</button>
                 </div>
             </form></div>';
