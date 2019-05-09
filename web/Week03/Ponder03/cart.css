@@ -2,3 +2,7 @@
     border: 2px solid;
     border-color: #d3d3d3;
 }
+
+.form-width {
+    width: 25%;
+}
