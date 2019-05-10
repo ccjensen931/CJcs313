@@ -15,10 +15,22 @@
   </head>
   <body>
     <img src="Images/php.png" class="img-fluid ${3|rounded-top,rounded-right,rounded-bottom,rounded-left,rounded-circle,|}" alt="">
-    <ul>
-        <li><a href="../../Week01/Ponder01/hello.html">Ponder 01</a></li>
-        <li><a href="../../Week02/Ponder02/index.php">Ponder 02</a></li>
-        <li><a href="../../Week03/TeamActivity03/home.php">Team Activity 03</a></li>
-    </ul>  
+    <div class="container">
+        <div class = "row">
+            <ul>
+                <div class="col-1">
+                    <li><a href="../../Week01/Ponder01/hello.html"><button type="button" class="btn btn-primary">Ponder 01</button></a></li>
+                </div>
+                <div class="col-1">
+                    <li><a href="../../Week02/Ponder02/index.php"><button type="button" class="btn btn-primary">Ponder 02</button></a></li>
+                </div>
+                <div class="col-1">
+                    <li><a href="../../Week03/TeamActivity03/home.php"><button type="button" class="btn btn-primary">Team Activity 03</button></a></li>
+                </div>
+                <div class="col-1">
+                    <li><a href="../../Week03/Ponder03/browse.php"><button type="button" class="btn btn-primary">Ponder 03</button></a></li>
+                </div>
+            </ul>  
+        </div>
   </body>
 </html>
