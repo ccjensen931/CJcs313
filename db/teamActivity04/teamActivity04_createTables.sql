@@ -6,6 +6,7 @@ CREATE TABLE users
 );
 
 CREATE SEQUENCE users_s1 START WITH 1;
+CREATE UNIQUE INDEX users_idx1 ON users(user_name);
 
 ------------------------------------------
 
