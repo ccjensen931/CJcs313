@@ -2,8 +2,8 @@ CREATE TABLE users
 (
     user_id                     INTEGER,
     username                    VARCHAR(50)         CONSTRAINT nn_users_1 NOT NULL,
-    user_password               VARCHAR(50)         CONSTRAINT nn_users_2 NOT NULL,
-    email                       VARCHAR(200)        CONSTRAINT nn_users_3 NOT NULL,
+    user_password               VARCHAR(200)         CONSTRAINT nn_users_2 NOT NULL,
+    email                       VARCHAR(100)        CONSTRAINT nn_users_3 NOT NULL,
     first_name                  VARCHAR(50)         CONSTRAINT nn_users_4 NOT NULL,
     last_name                   VARCHAR(50)         CONSTRAINT nn_users_5 NOT NULL,
     CONSTRAINT pk_users PRIMARY KEY(user_id)
