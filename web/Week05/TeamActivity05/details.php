@@ -11,7 +11,7 @@
         }
         if (isset($db) && $id > 0)
         {
-            $statement = $db->prepare('SELECT content FROM scriptures WHERE id=:id');
+            $statement = $db->prepare('SELECT * FROM scriptures WHERE id=:id');
             $statement->execute(array(':id' => $id));
             $result = $statement->fetch(PDO::FETCH_ASSOC);
         }
