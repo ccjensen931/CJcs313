@@ -46,8 +46,8 @@
                 {
                     foreach ($resultSet as $row)
                     {
-                        echo '<div class="row"><input type="hidden" name="id" id="' . $row['id'] . '" value="' . $row['id'] . '" placeholder="">';
-                        echo '<button type="submit" class="btn btn-primary"' . $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'] . '</button></div>';
+                        echo '<div class="row"><input type="hidden" name="id" id="' . $row['id'] . '" value="' . $row['id'] . '" placeholder="">
+                        <button type="submit" class="btn btn-primary">' . $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'] . '</button></div>';
                     }
                 }
                 else
