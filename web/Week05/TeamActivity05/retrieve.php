@@ -36,27 +36,26 @@
     </form>
     <h1> Scripture Resources </h1>
     <div class="container">
-        <form action="details.php" method="get" class="form-inline ml-3 my-2 my-lg-0">
-            <?php
-            if (isset($resultSet))
+        
+        <?php
+        if (isset($resultSet))
+        {
+            if ($search)
             {
-                if ($search)
+                foreach ($resultSet as $row)
                 {
-                    foreach ($resultSet as $row)
-                    {
-                        echo '<div class="row"><a href="details.php?id=' . $row['id'] . '">' . $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'] . '</a></div>';
-                    }
-                }
-                else
-                {
-                    foreach ($resultSet as $row)
-                    {
-                        echo '<p><b>' . $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'] . '</b> - "' . $row['content'] . '"</p>';
-                    }
+                    echo '<div class="row"><a href="details.php?id=' . $row['id'] . '">' . $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'] . '</a></div>';
                 }
             }
-            ?>
-        </form>     
+            else
+            {
+                foreach ($resultSet as $row)
+                {
+                    echo '<p><b>' . $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'] . '</b> - "' . $row['content'] . '"</p>';
+                }
+            }
+        }
+        ?>
     </div>
 </body>
 </html>
