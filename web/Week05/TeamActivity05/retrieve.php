@@ -13,11 +13,9 @@
 
         if (isset($db) && $search)
         {
-            echo 'Making query';
             $statement = $db->prepare('SELECT * FROM scriptures WHERE book=:book');
             $statement->execute(array(':book' => $book));
             $resultSet = $statement->fetchAll(PDO::FETCH_ASSOC);
-            echo 'Results: ' . count($resultSet);
         }
         else if (isset($db))
         {
@@ -46,8 +44,7 @@
                 {
                     foreach ($resultSet as $row)
                     {
-                        echo '<div class="row"><input type="hidden" name="id" id="' . $row['id'] . '" value="' . $row['id'] . '" placeholder="">
-                        <button type="submit" class="btn btn-primary">' . $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'] . '</button></div>';
+                        echo '<div class="row"><a href="details.php?id=' . $row['id'] . '">' . $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'] . '</a></div>';
                     }
                 }
                 else
