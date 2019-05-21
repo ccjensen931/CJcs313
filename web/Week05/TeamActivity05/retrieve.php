@@ -44,7 +44,7 @@
                 {
                     foreach ($resultSet as $row)
                     {
-                        echo '<input type="hidden" name="Scripture_id" id="' . $row['id'] . '" value="' . $row['id'] . '" placeholder="">';
+                        echo '<input type="hidden" name="id" id="' . $row['id'] . '" value="' . $row['id'] . '" placeholder="">';
                         echo '<button type="submit" class="btn btn-primary"><b>' . $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'] . '</b></button>';
                     }
                 }

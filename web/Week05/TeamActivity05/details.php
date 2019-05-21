@@ -5,9 +5,9 @@
         include 'dbConnect.php';
 
         $id = -1;
-        if(isset($_GET["Scripture_id"]))
+        if(isset($_GET["id"]))
         {
-            $book = $_GET["Scripture_id"];
+            $id = $_GET["id"];
         }
         if (isset($db) && $id > 0)
         {
