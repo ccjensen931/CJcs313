@@ -59,7 +59,7 @@
         {
             foreach ($resultSet as $row)
             {
-                echo $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'];
+                echo '<p><b>' . $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'] . '</b> - \"$row['content']\"</p>\n';
             }
         }
     ?>
