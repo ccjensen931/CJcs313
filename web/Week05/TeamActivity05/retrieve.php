@@ -13,6 +13,7 @@
 
         if (isset($db) && $search)
         {
+            echo 'Making query';
             $statement = $db->prepare('SELECT * FROM scriptures WHERE book=:book');
             $statement->execute(array(':book' => $book));
             $resultSet = $statement->fetchAll(PDO::FETCH_ASSOC);
