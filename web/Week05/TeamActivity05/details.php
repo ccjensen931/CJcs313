@@ -24,7 +24,7 @@
 </head>
 <body>
     <?php
-        echo $result['content'];
+        echo '<p><b>' . $result['book'] . ' ' . $result['chapter'] . ':' . $result['verse'] . '</b> - "' . $result['content'] . '"</p>';
     ?>
 </body>
 </html>
