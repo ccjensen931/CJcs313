@@ -2,44 +2,7 @@
 <html lang="en">
 <head>
     <?php
-        try
-        {
-          $dbUrl = getenv('DATABASE_URL');
-        
-          $dbOpts = parse_url($dbUrl);
-        
-          $dbHost = $dbOpts["host"];
-          $dbPort = $dbOpts["port"];
-          $dbUser = $dbOpts["user"];
-          $dbPassword = $dbOpts["pass"];
-          $dbName = ltrim($dbOpts["path"],'/');
-        
-          $db = new PDO("pgsql:host=$dbHost;port=$dbPort;dbname=$dbName", $dbUser, $dbPassword);
-        
-          $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        }
-        catch (PDOException $ex)
-        {
-          echo 'Error!: ' . $ex->getMessage();
-          die();
-        }
-
-   /*     try
-        {
-            $user = 'postgres';
-            $password = '';
-            $db = new PDO('pgsql:host=localhost;dbname=TeamActivity05', $user, $password);
-
-            // this line makes PDO give us an exception when there are problems,
-            // and can be very helpful in debugging! (But you would likely want
-            // to disable it for production environments.)
-        $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        }
-        catch (PDOException $ex)
-        {
-            echo 'Error!: ' . $ex->getMessage();
-            die();
-        }*/
+        include 'dbConnect.php';
 
         $search = false;
         if(isset($_POST["Search"]))
@@ -72,14 +35,29 @@
         <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
     <h1> Scripture Resources </h1>
-    <?php
-        if (isset($resultSet))
-        {
-            foreach ($resultSet as $row)
+    <div class="container">
+        <form action="details.php" method="get" class="form-inline ml-3 my-2 my-lg-0">
+            <?php
+            if (isset($resultSet))
             {
-                echo '<p><b>' . $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'] . '</b> - "' . $row['content'] . '"</p>';
+                if ($search)
+                {
+                    foreach ($resultSet as $row)
+                    {
+                        echo '<input type="hidden" name="Scripture_id" id="' . $row['id'] . '" value="' . $row['id'] . '" placeholder="">';
+                        echo '<button type="submit" class="btn btn-primary"><b>' . $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'] . '</b></button>';
+                    }
+                }
+                else
+                {
+                    foreach ($resultSet as $row)
+                    {
+                        echo '<p><b>' . $row['book'] . ' ' . $row['chapter'] . ':' . $row['verse'] . '</b> - "' . $row['content'] . '"</p>';
+                    }
+                }
             }
-        }
-    ?>
+            ?>
+        </form>     
+    </div>
 </body>
 </html>
