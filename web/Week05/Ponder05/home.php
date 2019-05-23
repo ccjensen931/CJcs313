@@ -26,5 +26,8 @@
 </head>
 <body>
     <p>This is the home page!</p>
+    <form action="redirect.php" method="post">
+        <button type="submit" class="btn btn-primary">Logout</button>
+    </form>
 </body>
 </html>

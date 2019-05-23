@@ -5,25 +5,7 @@
         session_start();
         include 'dbConnect.php';
 
-        if (isset($db) && isset($_POST["username"]) && isset($_POST["password"]))
-        {
-            $homeURL = 'home.php';
-
-            $statement = $db->prepare('SELECT user_password FROM users WHERE username=:username');
-            $statement->execute(array(':username' => $_POST["username"]));
-            $result = $statement->fetch(PDO::FETCH_ASSOC);
-
-            if (isset($result) && $result['user_password'] == $_POST["password"])
-            {
-                $_SESSION["Username"] = $_POST["username"];
-                header('Location: ' . $homeURL);
-                die();
-            }
-        }
-        else
-        {
-            
-        }
+        $loginError = 'Username/Password combination incorrect. Try signing in again.';
     ?>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -33,10 +15,35 @@
     <title>Login</title>
 </head>
 <body>
-    <div class="d-flex justify-content-center align-items-center">
+    <div class="mt-3 d-flex justify-content-center align-items-center">
         <form action="login.php" method="post">
             <div class="form-group">
-                <label for="">Login</label>
+                <h2>Login</h2>
+                <?php
+                    if (isset($db) && isset($_POST["username"]) && isset($_POST["password"]))
+                    {
+                        $homeURL = 'home.php';
+
+                        $statement = $db->prepare('SELECT user_password FROM users WHERE username=:username');
+                        $statement->execute(array(':username' => $_POST["username"]));
+                        $result = $statement->fetch(PDO::FETCH_ASSOC);
+
+                        if (isset($result) && $result['user_password'] == $_POST["password"])
+                        {
+                            $_SESSION["Username"] = $_POST["username"];
+                            header('Location: ' . $homeURL);
+                            die();
+                        }
+                        else
+                        {
+                            echo '<h4 style:"color:red">' . $loginError . '</h4>';
+                        }
+                    }
+                    else
+                    {
+                        echo '<h4 style:"color:red">' . $loginError . '</h4>'; 
+                    }
+                ?>
                 <div class="form-group">
                     <label for="username">Username</label>
                     <input type="text"
