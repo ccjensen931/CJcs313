@@ -33,26 +33,22 @@
     <title>Login</title>
 </head>
 <body>
-    <div class="card">
-        <div class="card-body">
-            <h4 class="card-title">Login</h4>
-            <form action="login.php" method="post">
+    <div class="d-flex justify-content-center align-items-center">
+        <form action="login.php" method="post">
+            <div class="form-group">
+                <label for="">Login</label>
                 <div class="form-group">
-                    <label for=""></label>
-                    <div class="form-group">
-                        <label for="">Username</label>
-                        <input type="text"
-                            class="form-control" name="username" id="username" aria-describedby="helpId" placeholder="">
-                        <small id="helpId" class="form-text text-muted">Help text</small>
-                    </div>
-                    <div class="form-group">
-                    <label for="">Password</label>
-                        <input type="password" class="form-control" name="password" id="password" placeholder="">
-                    </div>
-                    <button type="submit" class="btn btn-primary">Submit</button>
+                    <label for="username">Username</label>
+                    <input type="text"
+                        class="form-control" name="username" id="username" aria-describedby="helpId" placeholder="">
                 </div>
-            </form>
-        </div>
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <input type="password" class="form-control" name="password" id="password" placeholder="">
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </div>
+        </form>
     </div>
 </body>
 </html>
