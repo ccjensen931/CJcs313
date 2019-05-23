@@ -1,8 +1,8 @@
 <?php
+    session_start();
+
     $redirectURL = 'home.php';
 
     session_destroy();
-
-    echo 'It worked!';
-    //header('Location: ' . $redirectURL);
+    header('Location: ' . $redirectURL);
 ?>
