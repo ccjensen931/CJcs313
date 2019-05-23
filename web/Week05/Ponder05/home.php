@@ -5,7 +5,7 @@
         session_start();
         include 'dbConnect.php';
 
-        $loginURL = 'login.php';
+        $loginURL = 'https://www.google.com';
         $username;
 
         if (isset($_SESSION["Username"]))
