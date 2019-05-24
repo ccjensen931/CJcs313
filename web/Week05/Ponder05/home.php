@@ -29,10 +29,13 @@
     <title>Home</title>
 </head>
 <body>
-    <p>This is the home page!</p>
-    <?php
-        echo $username;
-        echo $userID;
-    ?>
+    <div class="mt-10 d-flex">
+        <div class="ml-10 p-3">
+            List Messages
+        </div>
+        <div class="mr-10 p-5">
+            Show message Content
+        </div>
+    </div>
 </body>
 </html>
