@@ -37,7 +37,7 @@
                         }
                         else
                         {
-                            echo '<h4 style="color:red">' . $loginError . '</h4>';
+                            echo '<h5 style="color:red">' . $loginError . '</h5>';
                         }
                     }
                 ?>
