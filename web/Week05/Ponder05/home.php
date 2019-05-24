@@ -31,10 +31,18 @@
 <body>
     <div class="mt-10 d-flex">
         <div class="ml-10 p-3">
-            List Messages
+            <ul class="list-group">
+                <li class="list-group-item">Item 1</li>
+                <li class="list-group-item">Item 2</li>
+                <li class="list-group-item">Item 3</li>
+            </ul>
         </div>
         <div class="mr-10 p-5">
-            Show message Content
+            <div class="card">
+                <div class="card-body">
+                    This is some text within a card body.
+                </div>
+            </div>
         </div>
     </div>
 </body>
