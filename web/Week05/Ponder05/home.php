@@ -7,10 +7,13 @@
 
         $loginURL = 'login.php';
         $username;
+        $userId;
+        $inbox = true;
 
         if (isset($_SESSION["Username"]))
         {
             $username = $_SESSION["Username"];
+            $userID = $_SESSION["ID"];
         }
         else
         {
@@ -26,6 +29,10 @@
 </head>
 <body>
     <p>This is the home page!</p>
+    <?php
+        echo $username;
+        echo $userID;
+    ?>
     <form action="redirect.php" method="post">
         <button type="submit" class="btn btn-primary">Logout</button>
     </form>
