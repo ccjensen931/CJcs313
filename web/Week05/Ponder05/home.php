@@ -29,15 +29,23 @@
     <title>Home</title>
 </head>
 <body>
-    <div class="mt-10 d-flex">
-        <div class="ml-10 p-3">
+    <div class="mt-25 d-flex">
+        <div class="ml-25 p-3">
             <ul class="list-group">
+                <?php
+                    if (isset($db)
+                    {
+                        $statement = $db->prepare('SELECT user_id, user_password FROM users WHERE username=:username');
+                        $statement->execute(array(':username' => $_POST["username"]));
+                        $result = $statement->fetch(PDO::FETCH_ASSOC);
+                    }
+                ?>
                 <li class="list-group-item">Item 1</li>
                 <li class="list-group-item">Item 2</li>
                 <li class="list-group-item">Item 3</li>
             </ul>
         </div>
-        <div class="mr-10 p-5">
+        <div class="mt-25 ml-10 p-25">
             <div class="card">
                 <div class="card-body">
                     This is some text within a card body.

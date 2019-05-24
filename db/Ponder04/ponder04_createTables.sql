@@ -35,7 +35,7 @@ CREATE TABLE messages
     message_id                  INTEGER,
     recipient_id                INTEGER             CONSTRAINT nn_messages_1 NOT NULL,
     sender_id                   INTEGER             CONSTRAINT nn_messages_2 NOT NULL,
-    message_text                VARCHAR(1000)      CONSTRAINT nn_messages_3 NOT NULL,
+    message_text                VARCHAR(1000)       CONSTRAINT nn_messages_3 NOT NULL,
     message_read                BOOLEAN             CONSTRAINT nn_messages_4 NOT NULL,
     CONSTRAINT pk_messages PRIMARY KEY(message_id),
     CONSTRAINT fk_messages_recipient FOREIGN KEY(recipient_id) REFERENCES users(user_id),
