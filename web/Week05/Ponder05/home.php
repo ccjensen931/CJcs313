@@ -4,7 +4,7 @@
     <?php
         session_start();
         include 'dbConnect.php';
-        include 'navbar/php';
+        include 'navbar.php';
 
         $loginURL = 'login.php';
         $username;
