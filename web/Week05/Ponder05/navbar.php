@@ -22,10 +22,10 @@
                         <span class="navbar-toggler-icon"></span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
+                        <a class="dropdown-item" href="home.php">Home</a>
+                        <a class="dropdown-item" href="contactManagement.php">Contacts</a>
                         <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
+                        <a class="dropdown-item" href="redirect.php">Logout</a>
                     </div>
                 </li>
             </ul>
