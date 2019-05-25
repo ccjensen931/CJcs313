@@ -60,10 +60,11 @@
         <?php
             if (isset($db) && isset($_GET["id"]))
             {
-                echo 'message id found! ' . $_GET["id"];
+                $message_id = $_GET["id"]
+                echo 'message id found! ' . $message_id;
                 $statment = $db->prepare('SELECT message_text FROM messages WHERE message_id = :message_id');
                 echo ' statement prepared! ';
-                $statement->execute(array(':message_id' => $_GET["id"]));
+                $statement->execute(array(':message_id' => $message_id));
                 echo ' statement exectuted! ';
                 $result = $statement->fetch(PDO::FETCH_ASSOC);
                 echo ' message text retrieved! ';
