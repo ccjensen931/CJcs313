@@ -47,11 +47,9 @@
                             echo '<li class="list-group-item">';
 
                             if (!$row['read'])
-                                echo '<p style="color:red"> NEW';
-                            else    
-                                echo '<p>';
+                                echo '<p style="color:red"> NEW </p>';
 
-                            echo $row['username'] . '</p></li>';
+                            echo $row['username'] . '</li>';
                         }
                     }
                 ?>
