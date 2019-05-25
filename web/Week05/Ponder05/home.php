@@ -61,22 +61,23 @@
                 ?>
             </ul>
         </div>
-        <div class="mt-5 ml-5 p-5">
-            <div class="card">
-                <div class="card-body">
-                    <?php
-                        if (isset($db) && isset($_POST["Message"]))
-                        {
-                            $statment = $db->prepare('SELECT message_text FROM messages WHERE message_id = :id');
-                            $statement->execute(array(':id' => $_POST["Message"]));
-                            $result = $statement->fetch(PDO::FETCH_ASSOC);
+        <?php
+            if (isset($db) && isset($_POST["Message"]))
+            {
+                echo 'message id found! ' . $_POST["Message"];
+                $statment = $db->prepare('SELECT message_text FROM messages WHERE message_id = :id');
+                $statement->execute(array(':id' => $_POST["Message"]));
+                $result = $statement->fetch(PDO::FETCH_ASSOC);
 
-                            echo '<p>' . $result['message_text'] . '</p>';
-                        }
-                    ?>
-                </div>
-            </div>
-        </div>
+                echo '<div class="mt-5 ml-5 p-5">
+                        <div class="card">
+                            <div class="card-body">
+                                <p>' . $result['message_text'] . '</p>
+                            </div>
+                        </div>
+                    </div>';
+            }
+        ?>
     </div>
 </body>
 </html>
