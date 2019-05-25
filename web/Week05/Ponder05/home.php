@@ -35,7 +35,7 @@
                 <?php
                     if (isset($db))
                     {
-                        $statement = $db->prepare('SELECT u.username as username, m.message_read as read
+                        $statement = $db->prepare('SELECT u.username as username, m.message_read as read, m.subject_text as subject_text
                                                     FROM messages m LEFT JOIN users u
                                                         ON m.sender_id = u.user_id
                                                     WHERE m.recipient_id = :user_id;');
@@ -44,12 +44,12 @@
 
                         foreach($resultSet as $row)
                         {
-                            echo '<li class="list-group-item">';
+                            echo '<li class="list-group-item"><p style="display:inline;">' . $row['username'] . '</p>';
 
                             if (!$row['read'])
                                 echo '<p style="color:red;display:inline;"> NEW </p>';
 
-                            echo '<p style="display:inline;">' . $row['username'] . '</p></li>';
+                            echo '<p style="display:inline;">' . $row['subject_text'] . '</p></li>';
                         }
                     }
                 ?>
