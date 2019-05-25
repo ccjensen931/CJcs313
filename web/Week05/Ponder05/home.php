@@ -33,16 +33,28 @@
         <div class="ml-5 p-3">
             <ul class="list-group">
                 <?php
-                    if (isset($db)
+                    if (isset($db))
                     {
-                        $statement = $db->prepare('SELECT user_id, user_password FROM users WHERE username=:username');
-                        $statement->execute(array(':username' => $_POST["username"]));
-                        $result = $statement->fetch(PDO::FETCH_ASSOC);
+                        $statement = $db->prepare('SELECT u.username, m.message_read
+                                                    FROM messages m LEFT JOIN users u
+                                                        ON m.sender_id = u.user_id
+                                                    WHERE m.recipient_id = :user_id;');
+                        $statement->execute(array(':user_id' => $userID));
+                        $resultSet = $statement->fetchALL(PDO::FETCH_ASSOC);
+
+                        foreach($resultSet as $username => $read)
+                        {
+                            echo '<li class="list-group-item';
+
+                            if (!$read)
+                                echo ' active">';
+                            else    
+                                echo '">';
+
+                            echo $username . '</li>';
+                        }
                     }
                 ?>
-                <li class="list-group-item">Item 1</li>
-                <li class="list-group-item">Item 2</li>
-                <li class="list-group-item">Item 3</li>
             </ul>
         </div>
         <div class="mt-5 ml-5 p-25">
