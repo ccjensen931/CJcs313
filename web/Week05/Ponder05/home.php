@@ -35,23 +35,23 @@
                 <?php
                     if (isset($db))
                     {
-                        $statement = $db->prepare('SELECT u.username, m.message_read
+                        $statement = $db->prepare('SELECT u.username as username, m.message_read as read
                                                     FROM messages m LEFT JOIN users u
                                                         ON m.sender_id = u.user_id
                                                     WHERE m.recipient_id = :user_id;');
                         $statement->execute(array(':user_id' => $userID));
                         $resultSet = $statement->fetchALL(PDO::FETCH_ASSOC);
 
-                        foreach($resultSet as $username => $read)
+                        foreach($resultSet as $row)
                         {
                             echo '<li class="list-group-item';
 
-                            if (!$read)
+                            if (!$row['read'])
                                 echo ' active">';
                             else    
                                 echo '">';
 
-                            echo $username . '</li>';
+                            echo $row['username'] . '</li>';
                         }
                     }
                 ?>
