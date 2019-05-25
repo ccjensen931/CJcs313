@@ -44,30 +44,28 @@
 
                         foreach($resultSet as $row)
                         {
-                            echo '<form action="home.php" method="post">
-                                    <input type="hidden" name="Message" id="' . $row['message_id'] . '" value="' . $row['message_id'] . '" placeholder="">
-                                    <li class="list-group-item">
-                                        <button type="submit" class="bt">
+                            echo '<li class="list-group-item">
+                                        <a href="home.php?id=' . $row['message_id'] . '">
                                             <p style="display:inline;">' . $row['username'] . '</p>';
 
                             if (!$row['read'])
-                                echo '<p style="color:red;display:inline;margin-left:15px">NEW</p><p style="display:inline;margin-left:85px">' . $row['subject_text'] . '</p></li>';
+                                echo '<p style="color:red;display:inline;margin-left:15px">NEW</p><p style="display:inline;margin-left:85px">' . $row['subject_text'] . '</p></a></li>';
                             else
-                                echo '<p style="display:inline;margin-left:135px">' . $row['subject_text'] . '</p></li>';
-
-                            echo '</form>';
+                                echo '<p style="display:inline;margin-left:135px">' . $row['subject_text'] . '</p></a></li>';
                         }
                     }
                 ?>
             </ul>
         </div>
         <?php
-            if (isset($db) && isset($_POST["Message"]))
+            if (isset($db) && isset($_GET["id"]))
             {
-                echo 'message id found! ' . $_POST["Message"];
+                echo 'message id found! ' . $_GET["id"];
                 $statment = $db->prepare('SELECT message_text FROM messages WHERE message_id = :id');
-                $statement->execute(array(':id' => $_POST["Message"]));
+                $statement->execute(array(':id' => $_GET["id"]));
                 $result = $statement->fetch(PDO::FETCH_ASSOC);
+
+                echo 'Message text retrieved! ' . $result['message_text'];
 
                 echo '<div class="mt-5 ml-5 p-5">
                         <div class="card">
