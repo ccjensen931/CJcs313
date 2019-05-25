@@ -58,9 +58,13 @@
             </ul>
         </div>
         <?php
-            if (isset($db) && isset($_GET["id"]))
+            $id = -1;
+            if (isset($_GET["id"]))
             {
                 $id = $_GET["id"];
+            }
+            if (isset($db) && $id > 0)
+            {
                 echo 'message id found! ' . $id . ' ' . count($id);
                 $statment = $db->prepare('SELECT message_text FROM messages WHERE message_id = :id;');
                 echo ' statement prepared! ';
