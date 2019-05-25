@@ -66,11 +66,11 @@
             if (isset($db) && $id > 0)
             {
                 echo 'message id found! ' . $id;
-                $statment2 = $db->prepare('SELECT message_text FROM messages WHERE message_id = :id;');
+                $statement = $db->prepare('SELECT message_text FROM messages WHERE message_id = :id;');
                 echo ' statement prepared! ';
-                $statement2->execute(array(':id' => $id));
+                $statement->execute(array(':id' => $id));
                 echo ' statement exectuted! ';
-                $result = $statement2->fetch(PDO::FETCH_ASSOC);
+                $result = $statement->fetch(PDO::FETCH_ASSOC);
                 echo ' message text retrieved! ';
                 if (isset($result))
                     echo ' message is: ' . $result['message_text'];
