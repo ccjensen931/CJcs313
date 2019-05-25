@@ -44,14 +44,14 @@
 
                         foreach($resultSet as $row)
                         {
-                            echo '<li class="list-group-item';
+                            echo '<li class="list-group-item">';
 
                             if (!$row['read'])
-                                echo ' active">';
+                                echo '<p style="color:red"> NEW';
                             else    
-                                echo '">';
+                                echo '<p>';
 
-                            echo $row['username'] . '</li>';
+                            echo $row['username'] . '</p></li>';
                         }
                     }
                 ?>
