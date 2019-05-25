@@ -29,8 +29,8 @@
     <title>Home</title>
 </head>
 <body>
-    <div class="mt-25 d-flex">
-        <div class="ml-25 p-3">
+    <div class="mt-5 d-flex">
+        <div class="ml-5 p-3">
             <ul class="list-group">
                 <?php
                     if (isset($db)
@@ -45,7 +45,7 @@
                 <li class="list-group-item">Item 3</li>
             </ul>
         </div>
-        <div class="mt-25 ml-10 p-25">
+        <div class="mt-5 ml-5 p-25">
             <div class="card">
                 <div class="card-body">
                     This is some text within a card body.
