@@ -44,14 +44,12 @@
 
                         foreach($resultSet as $row)
                         {
-                            echo '<li class="list-group-item"><p style="display:inline;">' . $row['username'] . '  </p>';
+                            echo '<li class="list-group-item"><p style="display:inline;">' . $row['username'] . '</p>';
 
                             if (!$row['read'])
-                                echo '<p style="color:red;display:inline;">  NEW  </p>';
-                            else
-                                echo '<p style="display:inline;">       </p>';
+                                echo '<p style="color:red;display:inline;margin-left:100px">NEW</p>';
 
-                            echo '<p style="display:inline;">    ' . $row['subject_text'] . '</p></li>';
+                            echo '<p style="display:inline;margin-left:100px">' . $row['subject_text'] . '</p></li>';
                         }
                     }
                 ?>
