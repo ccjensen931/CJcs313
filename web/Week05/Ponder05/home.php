@@ -35,7 +35,7 @@
                 <?php
                     if (isset($db))
                     {
-                        $statement = $db->prepare('SELECT u.username as username, m.message_read as read, m.subject_text as subject_text
+                        $statement = $db->prepare('SELECT m.message_id as message_id, u.username as username, m.message_read as read, m.subject_text as subject_text
                                                     FROM messages m LEFT JOIN users u
                                                         ON m.sender_id = u.user_id
                                                     WHERE m.recipient_id = :user_id;');
@@ -44,21 +44,36 @@
 
                         foreach($resultSet as $row)
                         {
-                            echo '<li class="list-group-item"><p style="display:inline;">' . $row['username'] . '</p>';
+                            echo '<form action="home.php" method="post">
+                                    <input type="hidden" name="Message" id="' . $row['message_id'] . '" value="' . $row['message_id'] . '" placeholder="">
+                                    <li class="list-group-item">
+                                        <button type="submit" class="bt">
+                                            <p style="display:inline;">' . $row['username'] . '</p>';
 
                             if (!$row['read'])
                                 echo '<p style="color:red;display:inline;margin-left:15px">NEW</p><p style="display:inline;margin-left:85px">' . $row['subject_text'] . '</p></li>';
                             else
                                 echo '<p style="display:inline;margin-left:135px">' . $row['subject_text'] . '</p></li>';
+
+                            echo '</form>';
                         }
                     }
                 ?>
             </ul>
         </div>
-        <div class="mt-5 ml-5 p-25">
+        <div class="mt-5 ml-5 p-5">
             <div class="card">
                 <div class="card-body">
-                    This is some text within a card body.
+                    <?php
+                        if (isset($db) && isset($_POST("Message")))
+                        {
+                            $statment = $db->prepare('SELECT message_text FROM messages WHERE message_id = :id');
+                            $statement->execute(array(':id' => $_POST["Message"]));
+                            $result = $statement->fetch(PDO::FETCH_ASSOC);
+
+                            echo '<p>' . $result['message_text'] . '</p>';
+                        }
+                    ?>
                 </div>
             </div>
         </div>
