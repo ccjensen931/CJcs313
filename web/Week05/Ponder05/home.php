@@ -65,7 +65,7 @@
             <div class="card">
                 <div class="card-body">
                     <?php
-                        if (isset($db) && isset($_POST("Message")))
+                        if (isset($db) && isset($_POST["Message"]))
                         {
                             $statment = $db->prepare('SELECT message_text FROM messages WHERE message_id = :id');
                             $statement->execute(array(':id' => $_POST["Message"]));
