@@ -49,7 +49,7 @@
                             if (!$row['read'])
                                 echo '<p style="color:red;display:inline;margin-left:15px">NEW</p><p style="display:inline;margin-left:85px">' . $row['subject_text'] . '</p></li>';
                             else
-                                echo '<p style="display:inline;margin-left:100px">' . $row['subject_text'] . '</p></li>';
+                                echo '<p style="display:inline;margin-left:170px">' . $row['subject_text'] . '</p></li>';
                         }
                     }
                 ?>
