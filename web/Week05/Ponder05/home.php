@@ -61,11 +61,14 @@
             if (isset($db) && isset($_GET["id"]))
             {
                 echo 'message id found! ' . $_GET["id"];
-                $statment = $db->prepare('SELECT message_text FROM messages WHERE message_id = :id');
-                $statement->execute(array(':id' => $_GET["id"]));
+                $statment = $db->prepare('SELECT message_text FROM messages WHERE message_id = :message_id');
+                echo ' statement prepared! ';
+                $statement->execute(array(':message_id' => $_GET["id"]));
+                echo ' statement exectuted! ';
                 $result = $statement->fetch(PDO::FETCH_ASSOC);
-
-                echo 'Message text retrieved! ' . $result['message_text'];
+                echo ' message text retrieved! ';
+                if (isset($result))
+                    echo ' message is: ' . $result['message_text'];
 
                 echo '<div class="mt-5 ml-5 p-5">
                         <div class="card">
