@@ -48,6 +48,8 @@
 
                             if (!$row['read'])
                                 echo '<p style="color:red;display:inline;">  NEW  </p>';
+                            else
+                                echo '<p style="display:inline;">       </p>';
 
                             echo '<p style="display:inline;">    ' . $row['subject_text'] . '</p></li>';
                         }
