@@ -62,7 +62,7 @@
             {
                 $id = $_GET["id"];
                 echo 'message id found! ' . $id . ' ' . count($id);
-                $statment = $db->prepare('SELECT message_text FROM messages WHERE message_id = :id');
+                $statment = $db->prepare('SELECT message_text FROM messages WHERE message_id = :id;');
                 echo ' statement prepared! ';
                 $statement->execute(array(':id' => $id));
                 echo ' statement exectuted! ';
