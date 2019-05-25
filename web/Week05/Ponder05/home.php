@@ -65,7 +65,7 @@
             }
             if (isset($db) && $id > 0)
             {
-                echo 'message id found! ' . $id . ' ' . count($id);
+                echo 'message id found! ' . $id;
                 $statment2 = $db->prepare('SELECT message_text FROM messages WHERE message_id = :id;');
                 echo ' statement prepared! ';
                 $statement2->execute(array(':id' => $id));
