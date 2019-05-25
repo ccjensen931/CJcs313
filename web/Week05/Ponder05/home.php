@@ -49,7 +49,7 @@
                             if (!$row['read'])
                                 echo '<p style="color:red;float:left;"> NEW </p>';
 
-                            echo '<p style="float:right;>' . $row['username'] . '</p></li>';
+                            echo '<p style="float:right;">' . $row['username'] . '</p></li>';
                         }
                     }
                 ?>
