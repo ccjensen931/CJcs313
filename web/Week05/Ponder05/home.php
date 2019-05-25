@@ -65,16 +65,10 @@
             }
             if (isset($db) && $id > 0)
             {
-                echo 'message id found! ' . $id;
                 $statement = $db->prepare('SELECT message_text FROM messages WHERE message_id = :id;');
-                echo ' statement prepared! ';
                 $statement->execute(array(':id' => $id));
-                echo ' statement exectuted! ';
                 $result = $statement->fetch(PDO::FETCH_ASSOC);
-                echo ' message text retrieved! ';
-                if (isset($result))
-                    echo ' message is: ' . $result['message_text'];
-
+                
                 echo '<div class="mt-5 ml-5 p-5">
                         <div class="card">
                             <div class="card-body">
