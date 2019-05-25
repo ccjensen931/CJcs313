@@ -60,7 +60,7 @@
         <?php
             if (isset($db) && isset($_GET["id"]))
             {
-                $message_id = $_GET["id"]
+                $message_id = $_GET["id"];
                 echo 'message id found! ' . $message_id;
                 $statment = $db->prepare('SELECT message_text FROM messages WHERE message_id = :message_id');
                 echo ' statement prepared! ';
