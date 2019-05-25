@@ -68,8 +68,8 @@
                 $statement = $db->prepare('SELECT message_text FROM messages WHERE message_id = :id;');
                 $statement->execute(array(':id' => $id));
                 $result = $statement->fetch(PDO::FETCH_ASSOC);
-                
-                echo '<div class="mt-5 ml-5 p-5">
+
+                echo '<div class="mt-5 ml-5 p-3">
                         <div class="card">
                             <div class="card-body">
                                 <p>' . $result['message_text'] . '</p>
