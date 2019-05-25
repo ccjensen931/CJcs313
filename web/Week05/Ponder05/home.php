@@ -47,9 +47,9 @@
                             echo '<li class="list-group-item">';
 
                             if (!$row['read'])
-                                echo '<p style="color:red"> NEW </p>';
+                                echo '<p style="color:red;float:left;"> NEW </p><p style="float:right;>';
 
-                            echo $row['username'] . '</li>';
+                            echo $row['username'] . '</p></li>';
                         }
                     }
                 ?>
