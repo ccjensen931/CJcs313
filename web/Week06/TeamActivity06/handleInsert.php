@@ -8,7 +8,7 @@
 
         if(isset($db))
         {
-            $statement  = $db->prepare('INSERT INTO scriptures VALUES (nextval(''scriptures_s1''), :book, :chapter, :verse, :content);');
+            $statement  = $db->prepare('INSERT INTO scriptures VALUES (nextval('scriptures_s1'), :book, :chapter, :verse, :content);');
             $statement->execute(array(':book' => $_POST["Book"], ':chapter' => $_POST["Chapter"], ':verse' => $_POST["Verse"], ':content' => $_POST["Content"]));
             $newID = $pdo->lastInsertId('scriptures_s1');
 
