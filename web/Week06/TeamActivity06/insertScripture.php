@@ -34,8 +34,8 @@
                 {
                     foreach ($resultSet as $row)
                     {
-                        echo '<label class="form-check-label">
-                                  <input type="checkbox" class="form-check-input" name="Topics[]" id="' . $row['topic']. '" value="' . $row['topic'] . '"> ' .
+                        echo '<label class="form-check-label ml-5">
+                                  <input type="checkbox" class="form-check-input ml-5" name="Topics[]" id="' . $row['topic']. '" value="' . $row['topic'] . '"> ' .
                                   $row['topic'] .
                               '</label><br>';
                     }
