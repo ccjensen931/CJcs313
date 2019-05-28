@@ -12,10 +12,10 @@
             $statement->execute(array(':book' => $_POST["Book"], ':chapter' => $_POST["Chapter"], ':verse' => $_POST["Verse"], ':content' => $_POST["Content"]));
             $newID = $db->lastInsertId('scriptures_s1');
 
-            if(isset($_POST["Topics[]"]))
+            if(isset($_POST['Topics'] && !empty($_POST['Topics']))
             {
                 $statementInsertScriptureTopic = $db->prepare("INSERT INTO scripture_topics VALUES (nextval('scripture_topics_s1'), :scripture_id, (SELECT id FROM topics WHERE topic = :topic))");
-                foreach ($_POST["Topics[]"] as $topic)
+                foreach ($_POST['Topics'] as $topic)
                 {
                     $statementInsertScriptureTopic->execute(array(':scripture_id' => $newID, ':topic' => $topic));
                 }
