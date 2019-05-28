@@ -36,7 +36,7 @@
 
                 foreach ($topics as $topic)
                 {
-                    echo "\t" . $topic[0];
+                    echo "\t" . $topic['topic'];
                 }
 
                 echo '</div>';
