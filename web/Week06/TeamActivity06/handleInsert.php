@@ -14,7 +14,7 @@
 
             if(isset($_POST["Topics[]"]))
             {
-                $statementInsertScriptureTopic = $db->prepare('INSERT INTO scripture_topics VALUES (nextval("scripture-topics_s1"), :scripture_id, (SELECT id FROM topics WHERE topic = :topic))');
+                $statementInsertScriptureTopic = $db->prepare("INSERT INTO scripture_topics VALUES (nextval('scripture-topics_s1'), :scripture_id, (SELECT id FROM topics WHERE topic = :topic))");
                 foreach ($_POST["Topics[]"] as $topic)
                 {
                     $statementInsertScriptureTopic->execute(array(':scripture_id' => $newID, ':topic' => $topic));
