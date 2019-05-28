@@ -34,9 +34,9 @@
                 $statement->execute(array(':id' => $row['id']));
                 $topics = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-                foreach ($topics['topic'] as $topic)
+                foreach ($topics as $topic)
                 {
-                    echo "\t" . $topic;
+                    echo "\t" . $topic[0];
                 }
 
                 echo '</div>';
