@@ -19,7 +19,7 @@
     <title>Insert Scripture</title>
 </head>
 <body>
-    <form action="" method="post">
+    <form action="handleInsert.php" method="post">
         <div class="form-group">
             <label for="Book">Book</label>
             <input type="text" class="form-control" name="Book" id="Book" aria-describedby="helpId" placeholder="Matthew" required>
@@ -37,7 +37,7 @@
                         echo '<label class="form-check-label">
                                   <input type="checkbox" class="form-check-input" name="Topics[]" id="' . $row['topic']. '" value="' . $row['topic'] . '"> ' .
                                   $row['topic'] .
-                              '</label>';
+                              '</label><br>';
                     }
                 }
             ?>
