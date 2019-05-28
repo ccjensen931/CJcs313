@@ -34,7 +34,7 @@
                 $statement->execute(array(':id' => $row['id']));
                 $topics = $statement->fetchAll(PDO::FETCH_ASSOC);
 
-                foreach ($topics as $topic)
+                foreach ($topics['topic'] as $topic)
                 {
                     echo "\t" . $topic;
                 }
