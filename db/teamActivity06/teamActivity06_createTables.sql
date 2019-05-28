@@ -30,4 +30,4 @@ CREATE UNIQUE INDEX scripture_topics_idx1 ON scripture_topics(scripture_id, topi
 SELECT topic
 FROM topics t RIGHT JOIN scripture_topics st
     ON t.id = st.topic_id
-WHERE st.scripture_id = 7;
+WHERE st.scripture_id = 9;
