@@ -40,7 +40,7 @@
                  
                             if (isset($result))
                             {
-                                $insertStatement = $db->prepare("INSERT INTO contacts VALUES (nextval('contacts_s1'), :owner_id, :owner_contact_id;");
+                                $insertStatement = $db->prepare("INSERT INTO contacts VALUES (nextval('contacts_s1'), :owner_id, :owner_contact_id);");
                                 $insertStatement->execute(array(':owner_id' => $userID, ':owner_contact_id' => $result['user_id']));
                             }
                             else
