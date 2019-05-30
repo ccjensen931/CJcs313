@@ -44,7 +44,7 @@
                         foreach($resultSet as $row)
                         {
                             echo '<li class="list-group-item">
-                                        <a href="home.php?id=' . $row['message_id'] . '">
+                                        <a href="homeInbox.php?id=' . $row['message_id'] . '">
                                             <p style="display:inline;">' . $row['username'] . '</p>';
 
                             if (!$row['read'])

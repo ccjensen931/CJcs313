@@ -44,7 +44,7 @@
                         foreach($resultSet as $row)
                         {
                             echo '<li class="list-group-item">
-                                        <a href="home.php?id=' . $row['message_id'] . '">
+                                        <a href="homeSent.php?id=' . $row['message_id'] . '">
                                             <p style="display:inline;">' . $row['username'] . '</p>';
 
                             echo '<p style="display:inline;margin-left:135px">' . $row['subject_text'] . '</p></a></li>';
