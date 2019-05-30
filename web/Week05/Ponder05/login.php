@@ -22,7 +22,7 @@
                 <?php
                     if (isset($db) && isset($_POST["username"]) && isset($_POST["password"]))
                     {
-                        $homeURL = 'homeInbox.php';
+                        $homeURL = 'home.php';
 
                         $statement = $db->prepare('SELECT user_id, user_password FROM users WHERE username = :username;');
                         $statement->execute(array(':username' => $_POST["username"]));

@@ -37,11 +37,11 @@
 </head>
 <body>
     <div class="mt-5 d-flex justify-content-center align-items-center">
-        <div class="form-group">
-            <form action="handleRegister.php" method="post">
+        <form action="handleRegister.php" method="post">
+            <div class="form-group">
                 <label for="Username">Username</label>
                 <input type="text"
-                    class="form-control" name="Username" id="Username" aria-describedby="helpId" placeholder="Username" onkeyup="getUser(this.value)">
+                    class="form-control" name="Username" id="Username" aria-describedby="helpId" placeholder="Username" onkeyup="getUser(this.value)" required>
                 <?php
                     if (isset($_POST['Username']) && isset($db))
                     {
@@ -60,22 +60,22 @@
                     }
                 ?>
                 <label for="Password">Password</label>
-                <input type="password" class="form-control" name="Password" id="Password" placeholder="">
+                <input type="password" class="form-control" name="Password" id="Password" placeholder="" required>
                 <label for="Confirm_Password">Confirm Password</label>
-                <input type="password" class="form-control" name="Confirm_Password" id="Confirm_Password" placeholder="" onkeyup="checkPasswords(document.getElementById('Password').value, this.value)">
+                <input type="password" class="form-control" name="Confirm_Password" id="Confirm_Password" placeholder="" onkeyup="checkPasswords(document.getElementById('Password').value, this.value)" required>
                 <p><span id="PasswordCheck"></span><p>
                 <label for="Email">Email</label>
                 <input type="text"
-                    class="form-control" name="Email" id="Email" aria-describedby="helpId" placeholder="">
+                    class="form-control" name="Email" id="Email" aria-describedby="helpId" placeholder="" required>
                 <label for="First_Name">First Name</label>
                 <input type="text"
-                    class="form-control" name="First_Name" id="First_Name" aria-describedby="helpId" placeholder="">
+                    class="form-control" name="First_Name" id="First_Name" aria-describedby="helpId" placeholder="" required>
                 <label for="Last_Name">Last Name</label>
                 <input type="text"
-                    class="form-control" name="Last_Name" id="Last_Name" aria-describedby="helpId" placeholder="">
+                    class="form-control" name="Last_Name" id="Last_Name" aria-describedby="helpId" placeholder="" required>
                 <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
-        </div>
+            </div>
+        </form>
     </div>
 </body>
 </html>
