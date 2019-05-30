@@ -20,7 +20,7 @@
         $usernameStatement->execute(array(':username' => $username));
         $result = $usernameStatement->fetch(PDO::FETCH_ASSOC);
     
-        if (isset($result))
+        if (!empty($result))
         {
             echo '<p>No result - Username</p>';
             $usernameError = "Username Not Available";
