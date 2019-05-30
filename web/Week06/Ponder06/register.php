@@ -30,9 +30,6 @@
             
             if (isset($result) && isset($result["user_id"]))
             {
-                echo '<p>No result - Username</p>';
-                $usernameError = "Username Not Available";
-                echo $usernameError;
                 return false;
             }
             return true;
@@ -46,9 +43,6 @@
             
             if (isset($result) && isset($result["user_id"]))
             {
-                echo '<p>No result - Email</p>';
-                $emailError = "Email Already In Use";
-                echo $emailError;
                 return false;
             }
             return true;
