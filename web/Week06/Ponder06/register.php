@@ -38,7 +38,7 @@
 <body>
     <div class="mt-5 d-flex justify-content-center align-items-center">
         <div class="form-group">
-            <form action="handleRegister.php">
+            <form action="handleRegister.php" method="post">
                 <label for="Username">Username</label>
                 <input type="text"
                     class="form-control" name="Username" id="Username" aria-describedby="helpId" placeholder="Username" onkeyup="getUser(this.value)">
