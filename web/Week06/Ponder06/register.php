@@ -20,6 +20,7 @@
             $usernameStatement->execute(array(':username' => $username));
             $result = $usernameStatement->fetch(PDO::FETCH_ASSOC);
             
+            echo '<p>Please work</p>';
             if (isset($result) && isset($result["user_id"]))
             {
                 echo '<p>No result - Username</p>';
@@ -38,7 +39,7 @@
             if (isset($result) && isset($result["user_id"]))
             {
                 echo '<p>No result - Email</p>';
-                $usernameError = "Email Already In Use";
+                $emailError = "Email Already In Use";
                 return false;
             }
             return true;
