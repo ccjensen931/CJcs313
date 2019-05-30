@@ -4,6 +4,7 @@
     <?php
         include 'dbConnect.php';
 
+        $loginURL = 'login.php';
         $usernameError = "";
         $emailError = "";
 
@@ -13,13 +14,16 @@
             $statement->execute(array(':username' => $_POST['Username'], ':pass' => $_POST['Password'], ':email' => $_POST['Email'], ':first_name' => $_POST['First_Name'], ':last_name' => $_POST['Last_Name']));
             header('Location: ' . $loginURL);
         }
-        if (isset($_POST["Username"]) && !checkUsername($_POST["Username"], $db))
+        else
         {
-            $usernameError = "Username Not Available";
-        }
-        if (isset($_POST["Email"]) && !checkEmail($_POST["Email"], $db))
-        {
-            $emailError = "Email Already In Use";
+            if (isset($_POST["Username"]) && !checkUsername($_POST["Username"], $db))
+            {
+                $usernameError = "Username Not Available";
+            }
+            if (isset($_POST["Email"]) && !checkEmail($_POST["Email"], $db))
+            {
+                $emailError = "Email Already In Use";
+            }
         }
 
         function checkUsername($username, $db)
