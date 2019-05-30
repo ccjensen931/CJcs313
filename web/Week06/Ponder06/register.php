@@ -53,7 +53,7 @@
                     if (isset($_POST["UsernameCheck"]) && isset($db))
                     {
                         $statement = $db->prepare('SELECT user_id FROM users WHERE username=:username');
-                        $statement->execute(array(':username' => $_POST['Username']));
+                        $statement->execute(array(':username' => $_POST["UsernameCheck"]));
                         $result = $statement->fetch(PDO::FETCH_ASSOC);
                     
                         if (isset($result))
