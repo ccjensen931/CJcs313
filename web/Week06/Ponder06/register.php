@@ -22,6 +22,7 @@
                     xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
                 }
                 xmlhttp.open("Post", "register.php", true);
+                xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
                 xmlhttp.send("UsernameCheck=str");
             }
         }
