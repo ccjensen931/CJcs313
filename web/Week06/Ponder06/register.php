@@ -14,35 +14,35 @@
             header('Location: ' . $loginURL);
         }
 
-    function checkUsername($username)
-    {
-        $usernameStatement = $db->prepare('SELECT user_id FROM users WHERE username=:username');
-        $usernameStatement->execute(array(':username' => $username));
-        $result = $usernameStatement->fetch(PDO::FETCH_ASSOC);
-    
-        if (!empty($result))
+        function checkUsername($username)
         {
-            echo '<p>No result - Username</p>';
-            $usernameError = "Username Not Available";
-            return false;
+            $usernameStatement = $db->prepare('SELECT user_id FROM users WHERE username=:username');
+            $usernameStatement->execute(array(':username' => $username));
+            $result = $usernameStatement->fetch(PDO::FETCH_ASSOC);
+            
+            if (isset($result) && isset($result["user_id"]))
+            {
+                echo '<p>No result - Username</p>';
+                $usernameError = "Username Not Available";
+                return false;
+            }
+            return true;
         }
-        return true;
-    }
 
-    function checkEmail($email)
-    {
-        $emailStatement = $db->prepare('SELECT user_id FROM users WHERE email=:email');
-        $emailStatement->execute(array(':email' => $email));
-        $result = $emailStatement->fetch(PDO::FETCH_ASSOC);
-    
-        if (isset($result))
+        function checkEmail($email)
         {
-            echo '<p>No result - Email</p>';
-            $usernameError = "Email Already In Use";
-            return false;
-        }
-        return true;
-    }
+            $emailStatement = $db->prepare('SELECT user_id FROM users WHERE email=:email');
+            $emailStatement->execute(array(':email' => $email));
+            $result = $emailStatement->fetch(PDO::FETCH_ASSOC);
+            
+            if (isset($result) && isset($result["user_id"]))
+            {
+                echo '<p>No result - Email</p>';
+                $usernameError = "Email Already In Use";
+                return false;
+            }
+            return true;
+        }   
     ?>
 
     <script>
