@@ -63,7 +63,7 @@
                 <input type="password" class="form-control" name="Password" id="Password" placeholder="" required>
                 <label for="Confirm_Password">Confirm Password</label>
                 <input type="password" class="form-control" name="Confirm_Password" id="Confirm_Password" placeholder="" onkeyup="checkPasswords(document.getElementById('Password').value, this.value)" required>
-                <p><span id="PasswordCheck"></span><p>
+                <p style="color:red"><span id="PasswordCheck"></span><p>
                 <label for="Email">Email</label>
                 <input type="text"
                     class="form-control" name="Email" id="Email" aria-describedby="helpId" placeholder="" required>

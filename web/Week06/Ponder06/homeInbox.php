@@ -68,7 +68,7 @@
                 $statement->execute(array(':id' => $id));
                 $result = $statement->fetch(PDO::FETCH_ASSOC);
 
-                echo '<div class="mt-5 ml-5">
+                echo '<div class="ml-5">
                         <div class="card">
                             <div class="card-body">
                                 <p>' . $result['message_text'] . '</p>
