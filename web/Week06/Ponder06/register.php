@@ -22,6 +22,7 @@
     
         if (isset($result))
         {
+            echo '<p>No result - Username</p>';
             $usernameError = "Username Not Available";
             return false;
         }
@@ -36,13 +37,14 @@
     
         if (isset($result))
         {
+            echo '<p>No result - Email</p>';
             $usernameError = "Email Already In Use";
             return false;
         }
         return true;
     }
     ?>
-    
+
     <script>
         function checkPasswords(password, confirm) {
             if (password == confirm) {
