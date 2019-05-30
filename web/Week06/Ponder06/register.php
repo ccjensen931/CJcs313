@@ -4,36 +4,46 @@
     <?php
         include 'dbConnect.php';
 
-        if (isset($_POST["Username"]) && isset($_POST["Password"]) && isset($_POST["Email"]) && isset($_POST["First_Name"]) && isset($_POST["Last_Name"]))
+        $usernameError = "";
+        $emailError = "";
+
+        if (isset($_POST["Username"]) && checkUsername($_POST["Username"]) && isset($_POST["Password"]) && isset($_POST["Email"]) && checkEmail($_POST["Email"]) && isset($_POST["First_Name"]) && isset($_POST["Last_Name"]))
         {
             $statement = $db->prepare("INSERT INTO users VALUES (nextval('users_s1'), :username, :pass, :email, :first_name, :last_name);");
             $statement->execute(array(':username' => $_POST['Username'], ':pass' => $_POST['Password'], ':email' => $_POST['Email'], ':first_name' => $_POST['First_Name'], ':last_name' => $_POST['Last_Name']));
             header('Location: ' . $loginURL);
         }
+
+    function checkUsername($username)
+    {
+        $usernameStatement = $db->prepare('SELECT user_id FROM users WHERE username=:username');
+        $usernameStatement->execute(array(':username' => $username));
+        $result = $usernameStatement->fetch(PDO::FETCH_ASSOC);
+    
+        if (isset($result))
+        {
+            $usernameError = "Username Not Available";
+            return false;
+        }
+        return true;
+    }
+
+    function checkEmail($email)
+    {
+        $emailStatement = $db->prepare('SELECT user_id FROM users WHERE email=:email');
+        $emailStatement->execute(array(':email' => $email));
+        $result = $emailStatement->fetch(PDO::FETCH_ASSOC);
+    
+        if (isset($result))
+        {
+            $usernameError = "Email Already In Use";
+            return false;
+        }
+        return true;
+    }
     ?>
+    
     <script>
-        function setUsernameStyle(xmlhtpp) {
-            var usernameCheckColor = document.getElementById("UsernameCheckColor").style;
-
-
-        }
-
-        function getUser(str) {
-            if (str == "") {
-                return;
-            } else {
-                xmlhttp = new XMLHttpRequest();
-                xmlhttp.onreadystatechange = function() {
-                    if (this.readyState == 4 && this.status == 200) {
-                        setUsernameStyle(this);
-                    }
-                }
-                xmlhttp.open("Post", "register.php", true);
-                xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-                xmlhttp.send("UsernameCheck=" + str);
-            }
-        }
-
         function checkPasswords(password, confirm) {
             if (password == confirm) {
                 document.getElementById("PasswordCheck").innerHTML = "";
@@ -52,29 +62,12 @@
 </head>
 <body>
     <div class="mt-5 d-flex justify-content-center align-items-center">
-        <form action="register.php" method="post">
+        <form>
             <div class="form-group">
                 <label for="Username">Username</label>
                 <input type="text"
-                    class="form-control" name="Username" id="Username" aria-describedby="helpId" placeholder="Username" onkeyup="getUser(this.value)" required>
-                <p id="UsernameCheckColor"><span id="UsernameCheckText"></span></p>
-                <?php
-                    if (isset($_POST["UsernameCheck"]) && isset($db))
-                    {
-                        $statement = $db->prepare('SELECT user_id FROM users WHERE username=:username');
-                        $statement->execute(array(':username' => $_POST["UsernameCheck"]));
-                        $result = $statement->fetch(PDO::FETCH_ASSOC);
-                    
-                        if (isset($result))
-                        {
-                            echo '<p style="color:red">Username Not Available</p>';
-                        }
-                        else
-                        {
-                            echo '<p style="color:green">Username Available</p>';
-                        }
-                    }
-                ?>
+                    class="form-control" name="Username" id="Username" aria-describedby="helpId" placeholder="Username" required>
+                <p style="color:red"><?php echo $usernameError ?></p>
                 <label for="Password">Password</label>
                 <input type="password" class="form-control" name="Password" id="Password" placeholder="" required>
                 <label for="Confirm_Password">Confirm Password</label>
@@ -83,6 +76,7 @@
                 <label for="Email">Email</label>
                 <input type="text"
                     class="form-control" name="Email" id="Email" aria-describedby="helpId" placeholder="" required>
+                <P style="color:red"><?php echo $emailError ?></p>
                 <label for="First_Name">First Name</label>
                 <input type="text"
                     class="form-control" name="First_Name" id="First_Name" aria-describedby="helpId" placeholder="" required>
