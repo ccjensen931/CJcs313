@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <?php
-        include '../../Week05/TeamActivity05/dbConnect.php';
+        include 'dbConnect.php';
 
         if (isset($db))
         {
