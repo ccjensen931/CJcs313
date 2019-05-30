@@ -53,7 +53,6 @@
                 <button type="submit" class="btn btn-primary">Submit</button>
             </div>
         </form>
-        <a href="register.php">Not a member? Signup now</a>
     </div>
 </body>
 </html>
