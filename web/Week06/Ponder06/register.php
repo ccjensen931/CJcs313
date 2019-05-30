@@ -7,14 +7,14 @@
         $usernameError = "";
         $emailError = "";
 
-        if (isset($_POST["Username"]) && checkUsername($_POST["Username"]) && isset($_POST["Password"]) && isset($_POST["Email"]) && checkEmail($_POST["Email"]) && isset($_POST["First_Name"]) && isset($_POST["Last_Name"]))
+        if (isset($_POST["Username"]) && checkUsername($_POST["Username"], $db) && isset($_POST["Password"]) && isset($_POST["Email"]) && checkEmail($_POST["Email"], $db) && isset($_POST["First_Name"]) && isset($_POST["Last_Name"]))
         {
             $statement = $db->prepare("INSERT INTO users VALUES (nextval('users_s1'), :username, :pass, :email, :first_name, :last_name);");
             $statement->execute(array(':username' => $_POST['Username'], ':pass' => $_POST['Password'], ':email' => $_POST['Email'], ':first_name' => $_POST['First_Name'], ':last_name' => $_POST['Last_Name']));
             header('Location: ' . $loginURL);
         }
 
-        function checkUsername($username)
+        function checkUsername($username, $db)
         {
             $usernameStatement = $db->prepare('SELECT user_id FROM users WHERE username=:username');
             $usernameStatement->execute(array(':username' => $username));
@@ -30,7 +30,7 @@
             return true;
         }
 
-        function checkEmail($email)
+        function checkEmail($email, $db)
         {
             $emailStatement = $db->prepare('SELECT user_id FROM users WHERE email=:email');
             $emailStatement->execute(array(':email' => $email));
