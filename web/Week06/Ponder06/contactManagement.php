@@ -24,7 +24,7 @@
 </head>
 <body>
     <div class="mt-5 d-flex">
-        <div class="container align-center">
+        <div class="container align-center col-4">
             <div class="form-group">
                 <form action="contactManagement.php" method="post">
                     <label for="Contact">Add Contact</label>
@@ -52,7 +52,7 @@
                 </form>
             </div>
         </div>
-        <div class="container align-center">
+        <div class="container align-center col-8">
             <ul class="list-group ml-5">
                 <?php
                     if (isset($db))
