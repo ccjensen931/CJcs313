@@ -5,15 +5,6 @@
         session_start();
         include 'dbConnect.php';
         include 'navbar.php';
-
-        $username;
-        $userId;
-
-        if (isset($_SESSION["Username"]))
-        {
-            $username = $_SESSION["Username"];
-            $userID = $_SESSION["ID"];
-        }
     ?>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -38,7 +29,7 @@
                             $selectStatement->execute(array(':username' => $_POST["Contact"]));
                             $result = $selectStatement->fetch(PDO::FETCH_ASSOC);
                  
-                            if (isset($result))
+                            if (isset($result) && !empty($result))
                             {
                                 $insertStatement = $db->prepare("INSERT INTO contacts VALUES (nextval('contacts_s1'), :owner_id, :owner_contact_id);");
                                 $insertStatement->execute(array(':owner_id' => $userID, ':owner_contact_id' => $result['user_id']));

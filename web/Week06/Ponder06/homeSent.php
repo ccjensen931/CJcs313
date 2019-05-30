@@ -7,15 +7,8 @@
         include 'navbar.php';
 
         $loginURL = 'login.php';
-        $username;
-        $userId;
 
-        if (isset($_SESSION["Username"]))
-        {
-            $username = $_SESSION["Username"];
-            $userID = $_SESSION["ID"];
-        }
-        else
+        if (!isset($_SESSION["Username"]))
         {
             header('Location: ' . $loginURL);
             die();
@@ -41,7 +34,7 @@
                         $statement->execute(array(':user_id' => $userID));
                         $resultSet = $statement->fetchALL(PDO::FETCH_ASSOC);
 
-                        foreach($resultSet as $row)
+                        foreach ($resultSet as $row)
                         {
                             echo '<li class="list-group-item">
                                         <a href="homeSent.php?id=' . $row['message_id'] . '">
