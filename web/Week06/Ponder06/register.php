@@ -65,7 +65,7 @@
 </head>
 <body>
     <div class="mt-5 d-flex justify-content-center align-items-center">
-        <form>
+        <form action="register.php" method="post">
             <div class="form-group">
                 <label for="Username">Username</label>
                 <input type="text"
