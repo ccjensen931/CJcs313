@@ -27,6 +27,7 @@
                     if (this.readyState == 4 && this.status == 200) {
                         setUsernameStyle(this);
                     }
+                }
                 xmlhttp.open("Post", "register.php", true);
                 xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
                 xmlhttp.send("UsernameCheck=" + str);
