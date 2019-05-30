@@ -22,7 +22,7 @@
                     xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
                 }
                 xmlhttp.open("Post", "register.php", true);
-                xmlhttp.send("Username=str");
+                xmlhttp.send("UsernameCheck=str");
             }
         }
 
@@ -50,7 +50,7 @@
                 <input type="text"
                     class="form-control" name="Username" id="Username" aria-describedby="helpId" placeholder="Username" onkeyup="getUser(this.value)" required>
                 <?php
-                    if (isset($_POST['Username']) && isset($db))
+                    if (isset($_POST["UsernameCheck"]) && isset($db))
                     {
                         $statement = $db->prepare('SELECT user_id FROM users WHERE username=:username');
                         $statement->execute(array(':username' => $_POST['Username']));
