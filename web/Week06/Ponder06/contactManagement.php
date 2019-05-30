@@ -5,6 +5,12 @@
         session_start();
         include 'dbConnect.php';
         include 'navbar.php';
+
+        if (isset($_POST["Remove"]))
+        {
+            $deleteStatement = $db->prepare('DELETE FROM contacts WHERE owner_id=:userId AND owner_contact_id=:id');
+            $deleteStatement->execute(array(':userId' => $userID, ':id' => $_POST["Remove"]));
+        }
     ?>
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -48,7 +54,7 @@
                 <?php
                     if (isset($db))
                     {
-                        $statement = $db->prepare('SELECT u.username as username, u.first_name as first_name, u.last_name as last_name
+                        $statement = $db->prepare('SELECT u.user_id as id, u.username as username, u.first_name as first_name, u.last_name as last_name
                                                     FROM users u RIGHT JOIN contacts c
                                                         ON c.owner_contact_id = u.user_id
                                                     WHERE owner_id = :id;');
@@ -58,9 +64,14 @@
                         foreach ($resultSet as $row)
                         {
                             echo '<li class="list-group-item">
-                                    <p style="display:inline;margin-left:50px;">' . $row['username'] . '</p>
-                                    <p style="display:inline;margin-left:150px;">' . $row['first_name'] . ' ' . $row['last_name'] . '</p>
-                                    <button type="button" style="display:inline;margin-left:150px;">Remove</button>
+                                    <div class="row">
+                                        <div class="col-4 align-center"><p style="display:inline;">' . $row['username'] . '</p></div>
+                                        <div class="col-4 align-center"><p style="display:inline;">' . $row['first_name'] . ' ' . $row['last_name'] . '</p></div>
+                                        <form action="contactManagement.php" method="post">
+                                            <input type="hidden" name="Remove" id="' . $row['id'] . '" value="'  . $row['id'] . '">
+                                            <div class="col-4 align-center"><button type="submit" class="btn btn-danger" style="display:inline;">Remove</button></div>
+                                        </form>
+                                    </div>
                                 </li>';
                         }
                     }
