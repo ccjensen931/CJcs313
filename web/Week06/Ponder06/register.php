@@ -12,18 +12,24 @@
         }
     ?>
     <script>
+        function setUsernameStyle(xmlhtpp) {
+            var usernameCheckColor = document.getElementById("UsernameCheckColor").style;
+
+
+        }
+
         function getUser(str) {
             if (str == "") {
                 return;
             } else {
-                if (window.XMLHttpRequet) {
-                    xmlhttp = new XMLHttpRequest();
-                } else {
-                    xmlhttp = new ActiveXObject("Microsoft.XMLHTTP");
-                }
+                xmlhttp = new XMLHttpRequest();
+                xmlhttp.onreadystatechange = function() {
+                    if (this.readyState == 4 && this.status == 200) {
+                        setUsernameStyle(this);
+                    }
                 xmlhttp.open("Post", "register.php", true);
                 xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-                xmlhttp.send("UsernameCheck=str");
+                xmlhttp.send("UsernameCheck=" + str);
             }
         }
 
@@ -50,6 +56,7 @@
                 <label for="Username">Username</label>
                 <input type="text"
                     class="form-control" name="Username" id="Username" aria-describedby="helpId" placeholder="Username" onkeyup="getUser(this.value)" required>
+                <p id="UsernameCheckColor"><span id="UsernameCheckText"></span></p>
                 <?php
                     if (isset($_POST["UsernameCheck"]) && isset($db))
                     {
@@ -59,11 +66,11 @@
                     
                         if (isset($result))
                         {
-                            echo '<h5 style="color:red">Username Not Available</h5>';
+                            echo '<p style="color:red">Username Not Available</p>';
                         }
                         else
                         {
-                            echo '<h5 style="color:green">Username Available</h5>';
+                            echo '<p style="color:green">Username Available</p>';
                         }
                     }
                 ?>
@@ -71,7 +78,7 @@
                 <input type="password" class="form-control" name="Password" id="Password" placeholder="" required>
                 <label for="Confirm_Password">Confirm Password</label>
                 <input type="password" class="form-control" name="Confirm_Password" id="Confirm_Password" placeholder="" onkeyup="checkPasswords(document.getElementById('Password').value, this.value)" required>
-                <p style="color:red"><span id="PasswordCheck"></span><p>
+                <p style="color:red"><span id="PasswordCheck"></span></p>
                 <label for="Email">Email</label>
                 <input type="text"
                     class="form-control" name="Email" id="Email" aria-describedby="helpId" placeholder="" required>
