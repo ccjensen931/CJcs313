@@ -20,10 +20,8 @@
             $usernameStatement->execute(array(':username' => $username));
             $result = $usernameStatement->fetch(PDO::FETCH_ASSOC);
             
-            echo '<p>Please work</p>';
             if (isset($result) && isset($result["user_id"]))
             {
-                echo '<p>No result - Username</p>';
                 $usernameError = "Username Not Available";
                 return false;
             }
@@ -38,7 +36,6 @@
             
             if (isset($result) && isset($result["user_id"]))
             {
-                echo '<p>No result - Email</p>';
                 $emailError = "Email Already In Use";
                 return false;
             }
@@ -70,7 +67,7 @@
                 <label for="Username">Username</label>
                 <input type="text"
                     class="form-control" name="Username" id="Username" aria-describedby="helpId" placeholder="Username" required>
-                <p style="color:red"><?php echo $usernameError ?></p>
+                <p style="color:red"><?php echo $usernameError; ?></p>
                 <label for="Password">Password</label>
                 <input type="password" class="form-control" name="Password" id="Password" placeholder="" required>
                 <label for="Confirm_Password">Confirm Password</label>
@@ -79,7 +76,7 @@
                 <label for="Email">Email</label>
                 <input type="text"
                     class="form-control" name="Email" id="Email" aria-describedby="helpId" placeholder="" required>
-                <P style="color:red"><?php echo $emailError ?></p>
+                <P style="color:red"><?php echo $emailError; ?></p>
                 <label for="First_Name">First Name</label>
                 <input type="text"
                     class="form-control" name="First_Name" id="First_Name" aria-describedby="helpId" placeholder="" required>
