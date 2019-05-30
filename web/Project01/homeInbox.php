@@ -9,7 +9,6 @@
         $loginURL = 'login.php';
         $username;
         $userId;
-        $inbox = true;
 
         if (isset($_SESSION["Username"]))
         {
