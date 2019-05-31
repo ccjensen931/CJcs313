@@ -1,7 +1,5 @@
 <?php
-    include 'dbConnect.php';
-
-    function updateSettings(array $postData, $userID)
+    function updateSettings(array $postData, $userID, $db)
     {
         if (!isset($postData) && !isset($userID))
         {

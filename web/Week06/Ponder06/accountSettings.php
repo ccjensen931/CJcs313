@@ -26,7 +26,7 @@
             $currentEmail = $result["email"];
         }
 
-        updateSettings($_POST, $userID);
+        updateSettings($_POST, $userID, $db);
     ?>
 
     <script>
