@@ -33,24 +33,6 @@
     <title>Account Settings</title>
 </head>
 <body>
-    
-        <form action="register.php" method="post">
-            <div class="form-group">
-                
-                
-                
-                
-                <label for="First_Name">First Name</label>
-                <input type="text"
-                    class="form-control" name="First_Name" id="First_Name" aria-describedby="helpId" placeholder="" required>
-                <label for="Last_Name">Last Name</label>
-                <input type="text"
-                    class="form-control" name="Last_Name" id="Last_Name" aria-describedby="helpId" placeholder="" required>
-                
-            </div>
-        </form>
-    </div>
-
     <div class="mt-5 d-flex justify-content-center align-items-center">
         <h4>Account Settings</h4>
         <form action="profileSettings.php" method="post">
