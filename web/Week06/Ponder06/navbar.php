@@ -14,6 +14,11 @@
 
         if (isset($_SESSION))
         {
+            updateSession();
+        }
+
+        function updateSession()
+        {
             $username = $_SESSION["Username"];
             $userID = $_SESSION["ID"];
             $first_name = $_SESSION["First_Name"];
