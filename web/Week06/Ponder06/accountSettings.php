@@ -16,8 +16,14 @@
 
         if (isset($_POST["Delete"]))
         {
-            $statement = $db->prepare("DELETE FROM users WHERE user_id=:id");
-            $statement->execute(array(':id' => $userID));
+            $statementDeleteMessages = $db->prepare("DELETE FROM messages WHERE recipient_id=:id OR sender_id=:id");
+            $statementDeleteMessages->execute(array(':id' => $userID));
+
+            $statementDeleteContacts = $db->prepare("DELETE FROM contacts WHERE owner_id=:id OR owner_contact_id=:id");
+            $statementDeleteContacts->execute(array(':id' => $userID));
+
+            $statementDeleteUser = $db->prepare("DELETE FROM users WHERE user_id=:id");
+            $statementDeleteUser->execute(array(':id' => $userID));
 
             header('Location: redirect.php');
         }
@@ -173,7 +179,7 @@
                             </button>
                         </div>
                         <div class="modal-body">
-                            <p>You are about to delete your account. This cannot be undone, are you sure you wish to proceed?</p>
+                            <p>You are about to delete your account. You will lose all your messages and contacts. This cannot be undone, are you sure you wish to proceed?</p>
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
