@@ -13,20 +13,6 @@
         $currentEmail = "";
         $passwordCorrect = false;
         $emailValid = false;
-
-        if (isset($_POST["Delete"]))
-        {
-            $statementDeleteMessages = $db->prepare("DELETE FROM messages WHERE recipient_id=:id OR sender_id=:id");
-            $statementDeleteMessages->execute(array(':id' => $userID));
-
-            $statementDeleteContacts = $db->prepare("DELETE FROM contacts WHERE owner_id=:id OR owner_contact_id=:id");
-            $statementDeleteContacts->execute(array(':id' => $userID));
-
-            $statementDeleteUser = $db->prepare("DELETE FROM users WHERE user_id=:id");
-            $statementDeleteUser->execute(array(':id' => $userID));
-
-            header('Location: redirect.php');
-        }
         
         if (!isset($_SESSION["Username"]))
         {
@@ -183,7 +169,7 @@
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
-                            <form action="accountSettings.php" method="post">
+                            <form action="deleteAccount.php" method="post">
                                 <input type="hidden" name="Delete" id="<?php echo $userID ?>" value="<?php echo $userID ?>">
                                 <button type="submit" class="btn btn-primary">Confirm</button>
                             </form>
