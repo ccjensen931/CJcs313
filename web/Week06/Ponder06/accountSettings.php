@@ -5,56 +5,28 @@
         session_start();
         include 'dbConnect.php';
         include 'navbar.php';
+        include 'updateSettings.php';
         
         $loginURL = 'login.php';
-        $passwordError;
-        $emailError;
-        $dbUpdate;
-        $updateDB = false;
+        $passwordError = "";
+        $emailError = "";
+        $currentEmail = "";
+        
         
         if (!isset($_SESSION["Username"]))
         {
             header('Location: ' . $loginURL);
             die();
         }
-
-        if (isset($_POST["OldPassword"]) && isset($_POST["NewPassword"]) && isset($_POST["ConfirmNewPassword"]))
+        else
         {
-            $passwordStatement = $db->prepare("SELECT user_password FROM users WHERE user_id=:id");
-            $passwordStatement->execute(array(':id' => $userID));
-            $result = $passwordStatement->fetch(PDO::FETCH_ASSOC);
-
-            if ($_POST["OldPassword"] != $result["user_password"])
-            {
-                $passwordError = "Password Incorrect";
-            }
-            else
-            {
-                $dbUpdate += " user_password=:password";
-                $updateDB = true;
-            }
-        }
-        if (isset($_POST["NewEmail"]))
-        {
-            $emailStatement = $db->prepare("SELECT user_id FROM users WHERE email=:email");
-            $emailStatement->execute(array(':email' => $_POST["NewEmail"]));
-            $result = $emailStatement->fetch(PDO::FETCH_ASSOC);
-            
-            if (isset($result) && isset($result["user_id"]))
-            {
-                $emailError = "Email Already In Use";
-            }
-            else
-            {
-                $dbUpdate += " email=:email";
-                $updateDB = true;
-            }
+            $currentEmailStatement = $db->prepare("SELECT email FROM users WHERE user_id=:id");
+            $currentEmailStatement->execute(array(':id' => $userID));
+            $result = $currentEmailStatement->fetch(PDO::FETCH_ASSOC);
+            $currentEmail = $result["email"];
         }
 
-        function updateDatabase()
-        {
-
-        }
+        updateSettings($_POST, $userID);
     ?>
 
     <script>
@@ -112,9 +84,8 @@
                     </div>
                     <div id="email" class="collapse show" aria-labelledby="headingEmail" data-parent="#accordionSettings">
                         <div class="card-body">
-                            <label for="OldEmail">Old Email</label>
-                            <input type="text"
-                                class="form-control" name="OldEmail" id="OldEmail" aria-describedby="helpId" placeholder="">
+                            <label for="OldEmail">Current Email</label>
+                            <p name="OldEmail" id="OldEmail" style="padding-left:5em"><?php echo $currentEmail ?></p>
                             <label for="NewEmail">New Email</label>
                             <input type="text"
                                 class="form-control" name="NewEmail" id="NewEmail" aria-describedby="helpId" placeholder="">
