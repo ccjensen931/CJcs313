@@ -91,12 +91,12 @@
                 <div class="card">
                     <div class="card-header" id="headingPassword">
                         <h2 class="mb-0">
-                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#password" aria-expanded="true" aria-controls="password">
+                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#password" aria-expanded="false" aria-controls="password">
                                 Password
                             </button>
                         </h2>
                     </div>
-                <div id="password" class="collapse <?php if (!$passwordCorrect) echo 'show'; ?>" aria-labelledby="headingPassword" data-parent="#accordionSettings">
+                <div id="password" class="collapse <?php if (!$passwordCorrect) echo 'show'; ?>" aria-labelledby="headingPassword">
                         <div class="card-body">
                             <label for="OldPassword">Old Password</label>
                             <p style="color:red"><?php echo $passwordError; ?></p>
@@ -112,12 +112,12 @@
                 <div class="card">
                     <div class="card-header" id="headingEmail">
                         <h2 class="mb-0">
-                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#email" aria-expanded="true" aria-controls="email">
+                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#email" aria-expanded="false" aria-controls="email">
                                 Email
                             </button>
                         </h2>
                     </div>
-                    <div id="email" class="collapse <?php if (!$emailValid) echo 'show'; ?>" aria-labelledby="headingEmail" data-parent="#accordionSettings">
+                    <div id="email" class="collapse <?php if (!$emailValid) echo 'show'; ?>" aria-labelledby="headingEmail">
                         <div class="card-body">
                             <label for="OldEmail">Current Email</label>
                             <p name="OldEmail" id="OldEmail" style="padding-left:5em"><?php echo $currentEmail ?></p>
@@ -131,12 +131,12 @@
                 <div class="card">
                     <div class="card-header" id="headingName">
                         <h2 class="mb-0">
-                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#name" aria-expanded="true" aria-controls="name">
+                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#name" aria-expanded="false" aria-controls="name">
                                 Name
                             </button>
                         </h2>
                     </div>
-                    <div id="name" class="collapse" aria-labelledby="headingName" data-parent="#accordionSettings">
+                    <div id="name" class="collapse" aria-labelledby="headingName">
                         <div class="card-body">
                             <label for="First_Name">First Name</label>
                             <input type="text"
