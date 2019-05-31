@@ -96,7 +96,7 @@
                             </button>
                         </h2>
                     </div>
-                <div id="password" class="collapse" aria-labelledby="headingPassword" data-parent="#accordionSettings">
+                <div id="password" class="collapse <?php if (!$passwordCorrect) echo 'show'; ?>" aria-labelledby="headingPassword" data-parent="#accordionSettings">
                         <div class="card-body">
                             <label for="OldPassword">Old Password</label>
                             <p style="color:red"><?php echo $passwordError; ?></p>
@@ -117,7 +117,7 @@
                             </button>
                         </h2>
                     </div>
-                    <div id="email" class="collapse" aria-labelledby="headingEmail" data-parent="#accordionSettings">
+                    <div id="email" class="collapse <?php if (!$emailValid) echo 'show'; ?>" aria-labelledby="headingEmail" data-parent="#accordionSettings">
                         <div class="card-body">
                             <label for="OldEmail">Current Email</label>
                             <p name="OldEmail" id="OldEmail" style="padding-left:5em"><?php echo $currentEmail ?></p>
