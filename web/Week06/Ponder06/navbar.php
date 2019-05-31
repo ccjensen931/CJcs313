@@ -68,6 +68,7 @@
                         <a class="dropdown-item" href="homeInbox.php">Inbox</a>
                         <a class="dropdown-item" href="homeSent.php">Outbox</a>
                         <a class="dropdown-item" href="contactManagement.php">Contacts</a>
+                        <a class="dropdown-item" href="accountSettings.php">Settings</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="redirect.php">Logout</a>
                     </div>
