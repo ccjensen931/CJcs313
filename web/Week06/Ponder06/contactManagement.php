@@ -6,6 +6,14 @@
         include 'dbConnect.php';
         include 'navbar.php';
 
+        $loginURL = 'login.php';
+        
+        if (!isset($_SESSION["Username"]))
+        {
+            header('Location: ' . $loginURL);
+            die();
+        }
+        
         if (isset($_POST["Remove"]))
         {
             $deleteStatement = $db->prepare('DELETE FROM contacts WHERE owner_id=:userId AND owner_contact_id=:id');
