@@ -12,40 +12,15 @@
         $updateFirstName = false;
         $updateLastName = false;
 
-        $statementPrepare = "";
-        $updateValueArray = array();
-
-        if (isset($_POST["OldPassword"]) && isset($_POST["NewPassword"]) && isset($_POST["ConfirmNewPassword"]) && !empty($_POST["NewPassword"]))
+        if (isset($_POST["NewPassword"]) && !empty($_POST["NewPassword"]))
         {
-            $passwordStatement = $db->prepare("SELECT user_password FROM users WHERE user_id=:id");
-            $passwordStatement->execute(array(':id' => $userID));
-            $result = $passwordStatement->fetch(PDO::FETCH_ASSOC);
-
-            if ($_POST["OldPassword"] != $result["user_password"])
-            {
-                $passwordError = "Password Incorrect";
-            }
-            else
-            {
                 $updateDB = true;
                 $updatePassword = true;
-            }
         }
         if (isset($_POST["NewEmail"]) && !empty($_POST["NewEmail"]))
         {
-            $emailStatement = $db->prepare("SELECT user_id FROM users WHERE email=:email");
-            $emailStatement->execute(array(':email' => $_POST["NewEmail"]));
-            $result = $emailStatement->fetch(PDO::FETCH_ASSOC);
-            
-            if (isset($result) && isset($result["user_id"]))
-            {
-                $emailError = "Email Already In Use";
-            }
-            else
-            {
-                $updateDB = true;
-                $updateEmail = true;
-            }
+            $updateDB = true;
+            $updateEmail = true;
         }
         if (isset($_POST["First_Name"]) && !empty($_POST["First_Name"]))
         {
@@ -60,6 +35,7 @@
 
         if ($updateDB)
         {
+            $updateValueArray = array();
             $statementPrepare = getUpdateStatement($postData, $updatePassword, $updateEmail, $updateFirstName, $updateLastName, $updateValueArray, $userID);
             $updateStatement = $db->prepare($statementPrepare);
             $updateStatement->execute($updateValueArray);

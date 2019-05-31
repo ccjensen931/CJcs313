@@ -11,7 +11,8 @@
         $passwordError = "";
         $emailError = "";
         $currentEmail = "";
-        
+        $passwordCorrect = false;
+        $emailValid = false;
         
         if (!isset($_SESSION["Username"]))
         {
@@ -26,7 +27,41 @@
             $currentEmail = $result["email"];
         }
 
-        updateSettings($_POST, $userID, $db);
+        if (isset($_POST["OldPassword"]) && !empty($_POST["OldPassword"]) && isset($_POST["NewPassword"]) && !empty($_POST["NewPassword"]) && isset($_POST["ConfirmNewPassword"]) && !empty($_POST["ConfirmNewPassword"]))
+        {
+            $passwordStatement = $db->prepare("SELECT user_password FROM users WHERE user_id=:id");
+            $passwordStatement->execute(array(':id' => $userID));
+            $result = $passwordStatement->fetch(PDO::FETCH_ASSOC);
+
+            if ($_POST["OldPassword"] != $result["user_password"])
+            {
+                $passwordError = "Password Incorrect";
+                $passwordCorrect = false;
+            }
+            else
+                $passwordCorrect = true;
+        }
+        else
+            $passwordCorrect = true;
+        if (isset($_POST["NewEmail"]) && !empty($_POST["NewEmail"]))
+        {
+            $emailStatement = $db->prepare("SELECT user_id FROM users WHERE email=:email");
+            $emailStatement->execute(array(':email' => $_POST["NewEmail"]));
+            $result = $emailStatement->fetch(PDO::FETCH_ASSOC);
+            
+            if (isset($result) && isset($result["user_id"]))
+            {
+                $emailError = "Email Already In Use";
+                $emailValid = false;
+            }
+            else
+                $emailValid = true;
+        }
+        else
+            $emailValid = true;
+
+        if ($passwordCorrect && $emailValid)
+            updateSettings($_POST, $userID, $db);
     ?>
 
     <script>
