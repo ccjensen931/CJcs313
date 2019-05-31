@@ -1,6 +1,4 @@
 <?php
-    session_start();
-
     function updateSettings($userID, $db)
     {
         if (!isset($postData) && !isset($userID))
