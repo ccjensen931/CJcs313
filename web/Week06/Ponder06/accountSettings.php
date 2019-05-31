@@ -140,10 +140,10 @@
                         <div class="card-body">
                             <label for="First_Name">First Name</label>
                             <input type="text"
-                                class="form-control" name="First_Name" id="First_Name" aria-describedby="helpId" placeholder="">
+                                class="form-control" name="First_Name" id="First_Name" aria-describedby="helpId" placeholder="<?php echo $_SESSION["First_Name"] ?>">
                             <label for="Last_Name">Last Name</label>
                             <input type="text"
-                                class="form-control" name="Last_Name" id="Last_Name" aria-describedby="helpId" placeholder="">
+                                class="form-control" name="Last_Name" id="Last_Name" aria-describedby="helpId" placeholder="<?php echo $_SESSION["Last_Name"] ?>">
                         </div>
                     </div>
                 </div>
