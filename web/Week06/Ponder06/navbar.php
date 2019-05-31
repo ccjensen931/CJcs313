@@ -14,10 +14,10 @@
 
         if (isset($_SESSION))
         {
-            updateSession();
+            updateCurrentUserVariables();
         }
 
-        function updateSession()
+        function updateCurrentUserVariables()
         {
             $username = $_SESSION["Username"];
             $userID = $_SESSION["ID"];
