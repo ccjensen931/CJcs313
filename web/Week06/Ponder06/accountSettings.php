@@ -33,14 +33,14 @@
     <title>Account Settings</title>
 </head>
 <body>
-    <div class="mt-5 d-flex justify-content-center align-items-center">
+    <div class="mt-5 d-flex justify-content-center align-items-center col-8">
         <h4>Account Settings</h4>
         <form action="profileSettings.php" method="post">
             <div class="accordion" id="accordionSettings">
                 <div class="card">
                     <div class="card-header" id="headingPassword">
                         <h2 class="mb-0">
-                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#password" aria-expanded="false" aria-controls="password">
+                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#password" aria-expanded="true" aria-controls="password">
                                 Password
                             </button>
                         </h2>
@@ -60,7 +60,7 @@
                 <div class="card">
                     <div class="card-header" id="headingEmail">
                         <h2 class="mb-0">
-                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#email" aria-expanded="false" aria-controls="email">
+                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#email" aria-expanded="true" aria-controls="email">
                                 Email
                             </button>
                         </h2>
@@ -80,7 +80,7 @@
                 <div class="card">
                     <div class="card-header" id="headingName">
                         <h2 class="mb-0">
-                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#name" aria-expanded="false" aria-controls="name">
+                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#name" aria-expanded="true" aria-controls="name">
                                 Name
                             </button>
                         </h2>
