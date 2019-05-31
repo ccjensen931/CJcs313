@@ -63,7 +63,7 @@
         if ($passwordCorrect && $emailValid)
         {
             updateSettings($userID, $db);
-            updateSession();
+            updateCurrentUserVariables();
         }
     ?>
 
