@@ -15,7 +15,7 @@
         $statementPrepare = "";
         $updateValueArray = array();
 
-        if (isset($_POST["OldPassword"]) && isset($_POST["NewPassword"]) && isset($_POST["ConfirmNewPassword"]))
+        if (isset($_POST["OldPassword"]) && isset($_POST["NewPassword"]) && isset($_POST["ConfirmNewPassword"]) && !empty($_POST["NewPassword"]))
         {
             $passwordStatement = $db->prepare("SELECT user_password FROM users WHERE user_id=:id");
             $passwordStatement->execute(array(':id' => $userID));
@@ -31,7 +31,7 @@
                 $updatePassword = true;
             }
         }
-        if (isset($_POST["NewEmail"]))
+        if (isset($_POST["NewEmail"]) && !empty($_POST["NewEmail"]))
         {
             $emailStatement = $db->prepare("SELECT user_id FROM users WHERE email=:email");
             $emailStatement->execute(array(':email' => $_POST["NewEmail"]));
@@ -47,12 +47,12 @@
                 $updateEmail = true;
             }
         }
-        if (isset($_POST["First_Name"]))
+        if (isset($_POST["First_Name"]) && !empty($_POST["First_Name"]))
         {
             $updateDB = true;
             $updateFirstName = true;
         }
-        if (isset($_POST["Last_Name"]))
+        if (isset($_POST["Last_Name"]) && !empty($_POST["Last_Name"]))
         {
             $updateDB = true;
             $updateLastName = true;
@@ -73,38 +73,38 @@
         if ($updatePassword)
         {
             if ($updateEmail || $updateFirstName || $updateLastName)
-                $statement += " user_password=:password,";
+                $statement = $statement . " user_password=:password,";
             else 
-                $statement += " user_password=:password";
+                $statement = $statement . " user_password=:password";
 
             $updateValueArray[':password'] = $_POST["NewPassword"];            
         }
         if ($updateEmail)
         {
             if ($updateFirstName || $updateLastName)
-                $statement += " email=:email,";
+                $statement = $statement . " email=:email,";
             else
-                $statement += " email=:email";
+                $statement = $statement . " email=:email";
                 
             $updateValueArray[':email'] = $_POST["NewEmail"];
         }
         if ($updateFirstName)
         {
             if ($updateLastName)
-                $statement += " first_name=:first_name,";
+                $statement = $statement . " first_name=:first_name,";
             else
-                $statement += " first_name=:first_name";
+                $statement = $statement . " first_name=:first_name";
 
             $updateValueArray[':first_name'] = $_POST["First_Name"];
         }
         if($updateLastName)
         {
-            $statement += " last_name=:last_name";
+            $statement = $statement . " last_name=:last_name";
 
             $updateValueArray[':last_name'] = $_POST["Last_Name"];
         }
 
-        $statement += " WHERE user_id=:id;";
+        $statement = $statement . " WHERE user_id=:id;";
         $updateValueArray[':id'] = $userID;
         return $statement;
     }
