@@ -36,7 +36,7 @@
     <div class="d-flex justify-content-center align-items-center">
         <h4>Account Settings</h4>
     </div>
-    <div class="mt-5 ml-5 d-flex justify-content-center align-items-center col-12">
+    <div class="mt-5 ml-5 d-flex justify-content-center align-items-center">
         <form action="profileSettings.php" method="post">
             <div class="accordion" id="accordionSettings">
                 <div class="card">
