@@ -60,7 +60,7 @@
 
         if ($updateDB)
         {
-            $statementPrepare = getUpdateStatement($postData, $updatePassword, $updateEmail, $updateFirstName, $updateLastName, $updateValueArray);
+            $statementPrepare = getUpdateStatement($postData, $updatePassword, $updateEmail, $updateFirstName, $updateLastName, $updateValueArray, $userID);
             $updateStatement = $db->prepare($statementPrepare);
             $updateStatement->execute($updateValueArray);
         }
