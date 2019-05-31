@@ -1,5 +1,7 @@
 <?php
-    function updateSettings(array $postData, $userID, $db)
+    session_start();
+
+    function updateSettings($userID, $db)
     {
         if (!isset($postData) && !isset($userID))
         {
@@ -24,11 +26,13 @@
         }
         if (isset($_POST["First_Name"]) && !empty($_POST["First_Name"]))
         {
+            $_SESSION["First_Name"] = $_POST["First_Name"];
             $updateDB = true;
             $updateFirstName = true;
         }
         if (isset($_POST["Last_Name"]) && !empty($_POST["Last_Name"]))
         {
+            $_SESSION["Last_Name"] = $_POST["Last_Name"];
             $updateDB = true;
             $updateLastName = true;
         }
@@ -36,13 +40,13 @@
         if ($updateDB)
         {
             $updateValueArray = array();
-            $statementPrepare = getUpdateStatement($postData, $updatePassword, $updateEmail, $updateFirstName, $updateLastName, $updateValueArray, $userID);
+            $statementPrepare = getUpdateStatement($updatePassword, $updateEmail, $updateFirstName, $updateLastName, $updateValueArray, $userID);
             $updateStatement = $db->prepare($statementPrepare);
             $updateStatement->execute($updateValueArray);
         }
     }
 
-    function getUpdateStatement(array $postData, $updatePassword, $updateEmail, $updateFirstName, $updateLastName, &$updateValueArray, $userID)
+    function getUpdateStatement($updatePassword, $updateEmail, $updateFirstName, $updateLastName, &$updateValueArray, $userID)
     {
         $statement = "UPDATE users SET";
         

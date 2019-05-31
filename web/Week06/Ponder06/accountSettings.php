@@ -61,7 +61,11 @@
             $emailValid = true;
 
         if ($passwordCorrect && $emailValid)
-            updateSettings($_POST, $userID, $db);
+        {
+            updateSettings($userID, $db);
+            $first_name = $_SESSION["First_Name"];
+            $last_name = $_SESSION["Last_Name"];
+        }
     ?>
 
     <script>

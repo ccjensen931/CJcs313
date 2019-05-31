@@ -24,7 +24,7 @@
                     {
                         $homeURL = 'homeInbox.php';
 
-                        $statement = $db->prepare('SELECT user_id, user_password, first_name, last_name FROM users WHERE username = :username;');
+                        $statement = $db->prepare('SELECT user_id, user_password FROM users WHERE username = :username;');
                         $statement->execute(array(':username' => $_POST["username"]));
                         $result = $statement->fetch(PDO::FETCH_ASSOC);
 
@@ -32,8 +32,6 @@
                         {
                             $_SESSION["Username"] = $_POST["username"];
                             $_SESSION["ID"] = $result['user_id'];
-                            $_SESSION["First_Name"] = $result['first_name'];
-                            $_SESSION["Last_Name"] = $result['last_name'];
                             header('Location: ' . $homeURL);
                             die();
                         }
