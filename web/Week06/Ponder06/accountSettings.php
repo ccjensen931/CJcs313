@@ -61,7 +61,7 @@
                             </button>
                         </h2>
                     </div>
-                <div id="password" class="collapse show" aria-labelledby="headingPassword" data-parent="#accordionSettings">
+                <div id="password" class="collapse" aria-labelledby="headingPassword" data-parent="#accordionSettings">
                         <div class="card-body">
                             <label for="OldPassword">Old Password</label>
                             <p style="color:red"><?php echo $passwordError; ?></p>
@@ -82,7 +82,7 @@
                             </button>
                         </h2>
                     </div>
-                    <div id="email" class="collapse show" aria-labelledby="headingEmail" data-parent="#accordionSettings">
+                    <div id="email" class="collapse" aria-labelledby="headingEmail" data-parent="#accordionSettings">
                         <div class="card-body">
                             <label for="OldEmail">Current Email</label>
                             <p name="OldEmail" id="OldEmail" style="padding-left:5em"><?php echo $currentEmail ?></p>
@@ -101,7 +101,7 @@
                             </button>
                         </h2>
                     </div>
-                    <div id="name" class="collapse show" aria-labelledby="headingName" data-parent="#accordionSettings">
+                    <div id="name" class="collapse" aria-labelledby="headingName" data-parent="#accordionSettings">
                         <div class="card-body">
                             <label for="First_Name">First Name</label>
                             <input type="text"
