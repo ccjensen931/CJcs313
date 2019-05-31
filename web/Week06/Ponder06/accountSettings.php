@@ -7,11 +7,53 @@
         include 'navbar.php';
         
         $loginURL = 'login.php';
+        $passwordError;
+        $emailError;
+        $dbUpdate;
+        $updateDB = false;
         
         if (!isset($_SESSION["Username"]))
         {
             header('Location: ' . $loginURL);
             die();
+        }
+
+        if (isset($_POST["OldPassword"]) && isset($_POST["NewPassword"]) && isset($_POST["ConfirmNewPassword"]))
+        {
+            $passwordStatement = $db->prepare("SELECT user_password FROM users WHERE user_id=:id");
+            $passwordStatement->execute(array(':id' => $userID));
+            $result = $passwordStatement->fetch(PDO::FETCH_ASSOC);
+
+            if ($_POST["OldPassword"] != $result["user_password"])
+            {
+                $passwordError = "Password Incorrect";
+            }
+            else
+            {
+                $dbUpdate += " user_password=:password";
+                $updateDB = true;
+            }
+        }
+        if (isset($_POST["NewEmail"]))
+        {
+            $emailStatement = $db->prepare("SELECT user_id FROM users WHERE email=:email");
+            $emailStatement->execute(array(':email' => $_POST["NewEmail"]));
+            $result = $emailStatement->fetch(PDO::FETCH_ASSOC);
+            
+            if (isset($result) && isset($result["user_id"]))
+            {
+                $emailError = "Email Already In Use";
+            }
+            else
+            {
+                $dbUpdate += " email=:email";
+                $updateDB = true;
+            }
+        }
+
+        function updateDatabase()
+        {
+
         }
     ?>
 
@@ -50,6 +92,7 @@
                 <div id="password" class="collapse show" aria-labelledby="headingPassword" data-parent="#accordionSettings">
                         <div class="card-body">
                             <label for="OldPassword">Old Password</label>
+                            <p style="color:red"><?php echo $passwordError; ?></p>
                             <input type="password" class="form-control" name="OldPassword" id="OldPassword" placeholder="">
                             <label for="NewPassword">New Password</label>
                             <input type="password" class="form-control" name="NewPassword" id="NewPassword" placeholder="">
@@ -75,7 +118,7 @@
                             <label for="NewEmail">New Email</label>
                             <input type="text"
                                 class="form-control" name="NewEmail" id="NewEmail" aria-describedby="helpId" placeholder="">
-                            <P style="color:red"><?php echo $emailError; ?></p>
+                            <p style="color:red"><?php echo $emailError; ?></p>
                         </div>
                     </div>
                 </div>

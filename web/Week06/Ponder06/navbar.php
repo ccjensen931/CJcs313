@@ -51,6 +51,10 @@
                         {
                             echo 'Contacts';
                         }
+                        else if (basename($_SERVER['PHP_SELF']) == 'accountSettings.php')
+                        {
+                            echo 'Settings';
+                        }
                     ?>
                 </p>
             </li>
