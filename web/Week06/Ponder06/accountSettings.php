@@ -158,7 +158,9 @@
             </div>
             <button type="submit" class="btn btn-primary">Save</button>
         </form>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#deleteAccountModal">
+    </div>
+    <div class="d-flex justify-content-center align-items-center">
+        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#deleteAccountModal">
             Delete Account
         </button>
         <div class="modal fade" id="deleteAccountModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -183,6 +185,7 @@
                     </div>
                 </div>
             </div>
+        </div>
     </div>
 </body>
 </html>
