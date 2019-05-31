@@ -13,6 +13,14 @@
         $currentEmail = "";
         $passwordCorrect = false;
         $emailValid = false;
+
+        if (isset($_POST["Delete"]))
+        {
+            $statement = $db->prepare("DELETE FROM users WHERE user_id=:id");
+            $statement->execute(array(':id' => $userID));
+
+            header('Location: redirect.php');
+        }
         
         if (!isset($_SESSION["Username"]))
         {
@@ -61,10 +69,7 @@
             $emailValid = true;
 
         if ($passwordCorrect && $emailValid)
-        {
             updateSettings($userID, $db);
-            //updateCurrentUserVariables();
-        }
     ?>
 
     <script>
@@ -153,6 +158,31 @@
             </div>
             <button type="submit" class="btn btn-primary">Save</button>
         </form>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#deleteAccountModal">
+            Delete Account
+        </button>
+        <div class="modal fade" id="deleteAccountModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Permanently Delete Account</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <p>You are about to delete your account. This cannot be undone, are you sure you wish to proceed?</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                            <form action="accountSettings.php" method="post">
+                                <input type="hidden" name="Delete" id="<?php echo $userID ?>" value="<?php echo $userID ?>">
+                                <button type="submit" class="btn btn-primary">Confirm</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
     </div>
 </body>
 </html>

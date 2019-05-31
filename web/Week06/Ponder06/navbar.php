@@ -18,15 +18,6 @@
             $userID = $_SESSION["ID"];
             $first_name = $_SESSION["First_Name"];
             $last_name = $_SESSION["Last_Name"];
-            //updateCurrentUserVariables();
-        }
-
-        function updateCurrentUserVariables()
-        {
-            $username = $_SESSION["Username"];
-            $userID = $_SESSION["ID"];
-            $first_name = $_SESSION["First_Name"];
-            $last_name = $_SESSION["Last_Name"];
         }
     ?>
 
