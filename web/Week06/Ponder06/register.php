@@ -10,7 +10,7 @@
 
         if (isset($_POST["Username"]) && checkUsername($_POST["Username"], $db) && isset($_POST["Password"]) && isset($_POST["Email"]) && checkEmail($_POST["Email"], $db) && isset($_POST["First_Name"]) && isset($_POST["Last_Name"]))
         {
-            $hashedPassword = password_hash($_POST["Password"]);
+            $hashedPassword = password_hash($_POST["Password"], PASSWORD_DEFAULT);
             $statement = $db->prepare("INSERT INTO users VALUES (nextval('users_s1'), :username, :pass, :email, :first_name, :last_name);");
             $statement->execute(array(':username' => $_POST['Username'], ':pass' => $hashedPassword, ':email' => $_POST['Email'], ':first_name' => $_POST['First_Name'], ':last_name' => $_POST['Last_Name']));
             header('Location: ' . $loginURL);
