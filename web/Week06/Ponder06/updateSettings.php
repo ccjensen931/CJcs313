@@ -11,11 +11,12 @@
         $updateEmail = false;
         $updateFirstName = false;
         $updateLastName = false;
-
+        
         if (isset($_POST["NewPassword"]) && !empty($_POST["NewPassword"]))
         {
-                $updateDB = true;
-                $updatePassword = true;
+            $_POST["NewPassword"] = password_hash($_POST["NewPassword"]);
+            $updateDB = true;
+            $updatePassword = true;
         }
         if (isset($_POST["NewEmail"]) && !empty($_POST["NewEmail"]))
         {
@@ -24,13 +25,11 @@
         }
         if (isset($_POST["First_Name"]) && !empty($_POST["First_Name"]))
         {
-            $_SESSION["First_Name"] = $_POST["First_Name"];
             $updateDB = true;
             $updateFirstName = true;
         }
         if (isset($_POST["Last_Name"]) && !empty($_POST["Last_Name"]))
         {
-            $_SESSION["Last_Name"] = $_POST["Last_Name"];
             $updateDB = true;
             $updateLastName = true;
         }
