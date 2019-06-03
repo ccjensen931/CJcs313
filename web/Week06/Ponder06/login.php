@@ -28,7 +28,7 @@
                         $statement->execute(array(':username' => $_POST["username"]));
                         $result = $statement->fetch(PDO::FETCH_ASSOC);
 
-                        if (isset($result) && password_verify($_POST["OldPassword"], $result["user_password"]))
+                        if (isset($result) && password_verify($_POST["password""], $result["user_password"]))
                         {
                             $_SESSION["Username"] = $_POST["username"];
                             $_SESSION["ID"] = $result['user_id'];
