@@ -9,11 +9,15 @@
 
         $username;
         $userId;
+        $first_name;
+        $last_name;
 
-        if (isset($_SESSION["Username"]))
+        if (isset($_SESSION))
         {
             $username = $_SESSION["Username"];
             $userID = $_SESSION["ID"];
+            $first_name = $_SESSION["First_Name"];
+            $last_name = $_SESSION["Last_Name"];
         }
     ?>
 
@@ -69,6 +73,8 @@
                         <span class="navbar-toggler-icon"></span>
                     </a>
                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdown">
+                        <p class="dropdown-item"><?php echo $first_name . " " . $last_name; ?></p>
+                        <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="homeInbox.php">Inbox</a>
                         <a class="dropdown-item" href="homeSent.php">Outbox</a>
                         <a class="dropdown-item" href="contactManagement.php">Contacts</a>
