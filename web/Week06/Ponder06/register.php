@@ -3,7 +3,6 @@
 <head>
     <?php
         include 'dbConnect.php';
-        require 'password.php';
 
         $loginURL = 'login.php';
         $usernameError = "";
