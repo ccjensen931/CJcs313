@@ -14,7 +14,7 @@
         
         if (isset($_POST["NewPassword"]) && !empty($_POST["NewPassword"]))
         {
-            $_POST["NewPassword"] = password_hash($_POST["NewPassword"]);
+            $_POST["NewPassword"] = password_hash($_POST["NewPassword"], PASSWORD_DEFAULT);
             $updateDB = true;
             $updatePassword = true;
         }
