@@ -47,7 +47,8 @@
             $passwordStatement->execute(array(':id' => $userID));
             $result = $passwordStatement->fetch(PDO::FETCH_ASSOC);
 
-            if ($_POST["OldPassword"] != $result["user_password"])
+            if (!password_verify($_POST["OldPassword"], $result["user_password"]))
+            //if ($_POST["OldPassword"] != $result["user_password"])
             {
                 $passwordError = "Password Incorrect";
                 $passwordCorrect = false;
