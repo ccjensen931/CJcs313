@@ -12,7 +12,7 @@
             if ($_POST["Password"] == $_POST["ConfirmPassword"])
             {
                 $hashedPassword = password_hash($_POST["Password"], PASSWORD_DEFAULT);
-                $insertUserStatement = $db->prepare("INSERT INTO team07_users VALUES (nextval('team07_users_s1'), :username, :password");
+                $insertUserStatement = $db->prepare("INSERT INTO team07_users VALUES (nextval('team07_users_s1'), :username, :password;");
                 $insertUserStatement->execute(array(':username' => $_POST["Username"], ':password' => $hashedPassword));
                 header('Location: welcomePage.php');
                 die();
