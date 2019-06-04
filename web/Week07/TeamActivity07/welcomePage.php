@@ -5,6 +5,9 @@
         session_start();
         include 'dbConnect.php';
         
+        ini_set('display_errors', 'On');
+        error_reporting(E_ALL | E_STRICT);
+
         $username = "";
         $userID = 0;
 
