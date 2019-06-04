@@ -5,9 +5,9 @@
         include 'dbConnect.php';
         
         ini_set('display_errors', 'On');
-        error_reporting(E_ALL | E_STRICT);
+        error_reporting(E_ALL | E_STRICT);z
 
-        if (isset($_POST["Username"]) && !checkUsername($_POST["Username"]) && isset($_POST["Password"]) && isset($_POST["ConfirmPassword"]))
+        if (isset($_POST["Username"]) && !checkUsername($_POST["Username"], $db) && isset($_POST["Password"]) && isset($_POST["ConfirmPassword"]))
         {
             if ($_POST["Password"] == $_POST["ConfirmPassword"])
             {
@@ -19,7 +19,7 @@
             }
         }
 
-        function checkUsername($username)
+        function checkUsername($username, $db)
         {
             $checkUsernameStatement = $db->prepare('SELECT username FROM team07_users WHERE username=:username');
             $checkUsernameStatement->execute(array(':username' => $_POST["Username"]));
