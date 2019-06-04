@@ -14,6 +14,7 @@
             $statement = $db->prepare("INSERT INTO users VALUES (nextval('users_s1'), :username, :pass, :email, :first_name, :last_name);");
             $statement->execute(array(':username' => $_POST['Username'], ':pass' => $hashedPassword, ':email' => $_POST['Email'], ':first_name' => $_POST['First_Name'], ':last_name' => $_POST['Last_Name']));
             header('Location: ' . $loginURL);
+            die();
         }
         else
         {

@@ -4,13 +4,21 @@
     <?php
         session_start();
         include 'dbConnect.php';
+        include 'deleteMessage.php';
         include 'navbar.php';
 
+        $homeURL = 'homeSent.php';
         $loginURL = 'login.php';
 
         if (!isset($_SESSION["Username"]))
         {
             header('Location: ' . $loginURL);
+            die();
+        }
+        if (isset($_POST["DeleteMessage"]))
+        {
+            deleteMessage($_POST["DeleteMessage"]);
+            header('Location: ' . $homeURL);
             die();
         }
     ?>
@@ -23,6 +31,7 @@
 <body>
     <div class="mt-5 d-flex">
         <div class="ml-5 p-3">
+            <a href="composeMessage.php"><button type="button" class="btn btn-primary">Compose</button></a>
             <ul class="list-group">
                 <?php
                     if (isset($db))
@@ -58,10 +67,14 @@
                 $statement->execute(array(':id' => $id));
                 $result = $statement->fetch(PDO::FETCH_ASSOC);
 
-                echo '<div class="mt-5 ml-5">
+                echo '<div class="mt-3 ml-5">
                         <div class="card">
                             <div class="card-body">
                                 <p>' . $result['message_text'] . '</p>
+                                <form action="homeSent.php" method="post">
+                                    <input type="hidden" name="DeleteMessage" id="' . $_GET["id"] . '" value="' . $_GET["id"] . '" placeholder="">
+                                    <button type="submit" class="btn btn-danger" style="display:inline;">Delete</button>
+                                </form>
                             </div>
                         </div>
                     </div>';

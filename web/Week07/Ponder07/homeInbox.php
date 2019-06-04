@@ -4,8 +4,10 @@
     <?php
         session_start();
         include 'dbConnect.php';
+        include 'deleteMessage.php';
         include 'navbar.php';
 
+        $homeURL = 'homeInbox.php';
         $loginURL = 'login.php';
         
         if (!isset($_SESSION["Username"]))
@@ -17,6 +19,12 @@
         {
             $updateMessagesStatement = $db->prepare('UPDATE messages SET message_read=:read WHERE message_id=:id');
             $updateMessagesStatement->execute(array(':read' => true, ':id' => $_GET["id"]));
+        }
+        if (isset($_POST["DeleteMessage"]))
+        {
+            deleteMessage($_POST["DeleteMessage"]);
+            header('Location: ' . $homeURL);
+            die();
         }
     ?>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -67,10 +75,14 @@
                 $statement->execute(array(':id' => $id));
                 $result = $statement->fetch(PDO::FETCH_ASSOC);
 
-                echo '<div class="ml-5">
+                echo '<div class="mt-3 ml-5">
                         <div class="card">
                             <div class="card-body">
                                 <p>' . $result['message_text'] . '</p>
+                                <form action="homeInbox.php" method="post">
+                                    <input type="hidden" name="DeleteMessage" id="' . $_GET["id"] . '" value="' . $_GET["id"] . '" placeholder="">
+                                    <button type="submit" class="btn btn-danger" style="display:inline;">Delete</button>
+                                </form>
                             </div>
                         </div>
                     </div>';

@@ -7,12 +7,13 @@
         include 'navbar.php';
         include 'sendMessage.php';
 
-        $homeURL = 'homeInbox.php';
+        $homeURL = 'homeSent.php';
 
         if (isset($_POST["Receiver"]) && isset($_POST["Subject"]) && isset($_POST["Content"]))
         {
             insertMessage($userID, $db);
             header('Location: ' . $homeURL);
+            die();
         }
     ?>
 
