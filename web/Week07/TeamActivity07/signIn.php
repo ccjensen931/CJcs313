@@ -31,6 +31,7 @@
                     {
                         $_SESSION["Username"] = $_POST["username"];
                         $_SESSION["ID"] = $result['user_id'];
+                        echo 'Success!';
                         header('Location: welcomePage.php');
                         die();
                     }
