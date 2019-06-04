@@ -28,6 +28,7 @@
 <body>
     <div class="mt-5 d-flex">
         <div class="ml-5 p-3">
+            <a href="composeMessage.php"><button type="button" class="btn btn-primary">Compose</button></a>
             <ul class="list-group">
                 <?php
                     if (isset($db))

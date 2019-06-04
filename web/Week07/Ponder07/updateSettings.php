@@ -1,11 +1,6 @@
 <?php
     function updateSettings($userID, $db)
     {
-        if (!isset($postData) && !isset($userID))
-        {
-            return;
-        }
-
         $updateDB = false;
         $updatePassword = false;
         $updateEmail = false;
