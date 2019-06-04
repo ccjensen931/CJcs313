@@ -8,7 +8,7 @@
         $username = "";
         $userID = 0;
 
-        if (isset($_SESSION))
+        if (isset($_SESSION["Username"]) && isset($_SESSION["ID"]))
         {
             $username = $_SESSION["Username"];
             $userID = $_SESSION["ID"];
