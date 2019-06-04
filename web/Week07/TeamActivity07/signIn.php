@@ -27,11 +27,11 @@
                     $checkLoginStatement = $db->prepare("SELECT user_id, username, user_password FROM team07_users WHERE username=:username;");
                     $checkLoginStatement->execute(array(':username' => $_POST["Username"]));
                     $result = $checkLoginStatement->fetch(PDO::FETCH_ASSOC);
-                    echo 'executed';
+                    echo ' executed ';
 
                     if (isset($result) && password_verify($_POST["Password"], $result["user_password"]))
                     {
-                        $_SESSION["Username"] = $_POST["username"];
+                        $_SESSION["Username"] = $result["username"];
                         $_SESSION["ID"] = $result['user_id'];
                         echo 'Success!';
                         header('Location: welcomePage.php');
