@@ -23,9 +23,11 @@
             <?php
                 if (isset($db) && isset($_POST["Username"]) && isset($_POST["Password"]))
                 {
+                    echo 'making db query';
                     $checkLoginStatement = $db->prepare("SELECT user_id, username, user_password FROM team07_users WHERE username=:username;");
                     $checkLoginStatement->execute(array(':username' => $_POST["Username"]));
                     $result = $checkLoginStatement->fetch(PDO::FETCH_ASSOC);
+                    echo 'executed';
 
                     if (isset($result) && password_verify($_POST["Password"], $result["user_password"]))
                     {
