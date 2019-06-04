@@ -19,30 +19,34 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="form-group">
-        <form action="composeMessage.php" method="post">
-            <label for="Receiver">To:</label>
-            <select class="form-control" name="Receiver" id="Receiver" required>
-                <?php
-                    $getContactsStatement = $db->prepare('SELECT u.username as username
-                                                        FROM users u RIGHT JOIN contacts c
-                                                        ON c.owner_contact_id = u.user_id
-                                                        WHERE owner_id = :id;');
-                    $getContactsStatement->execute(array(':id' => $userID));
-                    $resultSet = $statement->fetchALL(PDO::FETCH_ASSOC);
+    <div class="container justify-content-center align-items-center">
+        <div class="col-8">
+            <div class="form-group">
+                <form action="composeMessage.php" method="post">
+                    <label for="Receiver">To:</label>
+                    <select class="form-control" name="Receiver" id="Receiver" required>
+                        <?php
+                            $getContactsStatement = $db->prepare('SELECT u.username as username
+                                                                FROM users u RIGHT JOIN contacts c
+                                                                ON c.owner_contact_id = u.user_id
+                                                                WHERE owner_id = :id;');
+                            $getContactsStatement->execute(array(':id' => $userID));
+                            $resultSet = $getContactsStatement->fetchALL(PDO::FETCH_ASSOC);
 
-                    foreach($resultSet as $row)
-                    {
-                        echo '<option>' . $row["username"] . '</option>';
-                    }
-                ?>
-            </select>
-            <label for="Subject">Subject:</label>
-            <input type="text"
-                class="form-control" name="Subject" id="Subject" aria-describedby="helpId" placeholder="Subject" required>
-            <textarea class="form-control" name="Content" id="Content" rows="5" required></textarea>
-            <button type="submit" class="btn btn-primary">Send</button>
-        </form>
+                            foreach($resultSet as $row)
+                            {
+                                echo '<option>' . $row["username"] . '</option>';
+                            }
+                        ?>
+                    </select>
+                    <label for="Subject">Subject:</label>
+                    <input type="text"
+                        class="form-control" name="Subject" id="Subject" aria-describedby="helpId" placeholder="Subject" required>
+                    <textarea class="form-control" name="Content" id="Content" rows="5" required></textarea>
+                    <button type="submit" class="btn btn-primary">Send</button>
+                </form>
+            </div>
+        </div>
     </div>
 </body>
 </html>
