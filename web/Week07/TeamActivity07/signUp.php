@@ -77,11 +77,11 @@
             <input type="text"
                 class="form-control" name="Username" id="Username" aria-describedby="helpId" placeholder="" required>
             <label for="Password">Password</label>
-            <input type="text"
+            <input type="password"
                 class="form-control" name="Password" id="Password" aria-describedby="helpId" placeholder="" onkeyup="passwordContains(this.value)" required>
             <p style="color:red"><span id="PasswordContains"></span></p>
             <label for="ConfirmPassword">ConfirmPassword<span id="PasswordCheckAst"></span></label>
-            <input type="text"
+            <input type="password"
                 class="form-control" name="ConfirmPassword" id="ConfirmPassword" aria-describedby="helpId" placeholder="" onkeyup="checkPasswords(document.getElementById('Password').value, this.value)" required>
             <p style="color:red"><span id="PasswordCheck"></span></p>
             <button type="submit" class="btn btn-primary">Submit</button>

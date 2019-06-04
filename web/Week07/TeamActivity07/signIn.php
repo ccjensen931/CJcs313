@@ -42,7 +42,7 @@
             <input type="text"
                 class="form-control" name="Username" id="Username" aria-describedby="helpId" placeholder="" required>
             <label for="Password">Password</label>
-            <input type="text"
+            <input type="password"
                 class="form-control" name="Password" id="Password" aria-describedby="helpId" placeholder="" required>
             <button type="submit" class="btn btn-primary">Submit</button>
         </div>
