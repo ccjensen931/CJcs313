@@ -7,7 +7,7 @@
         ini_set('display_errors', 'On');
         error_reporting(E_ALL | E_STRICT);
 
-        if (isset($_POST["Username"]) && !checkUsername($_POST["Username"], $db) && isset($_POST["Password"]) && isset($_POST["ConfirmPassword"]))
+        if (isset($_POST["Username"]) && checkUsername($_POST["Username"], $db) && isset($_POST["Password"]) && isset($_POST["ConfirmPassword"]))
         {
             if ($_POST["Password"] == $_POST["ConfirmPassword"])
             {
