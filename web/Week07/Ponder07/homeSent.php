@@ -17,7 +17,7 @@
         }
         if (isset($_POST["DeleteMessage"]))
         {
-            deleteMessage($_POST["DeleteMessage"]);
+            deleteMessage($_POST["DeleteMessage"], $db);
             header('Location: ' . $homeURL);
             die();
         }
