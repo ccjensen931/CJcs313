@@ -47,5 +47,6 @@
             <button type="submit" class="btn btn-primary">Submit</button>
         </div>
     </form>
+    <a href="signUp.php"><button type="btn" class="btn btn-primary">Sign Up</button></a>
 </body>
 </html>
