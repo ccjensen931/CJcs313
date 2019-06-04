@@ -4,7 +4,7 @@
     <?php
         session_start();
         include 'dbConnect.php';
-        include 'navbar.php'
+        include 'navbar.php';
         include 'sendMessage.php';
 
         if (isset($_POST["Receiver"]) && isset($_POST["Subject"]) && isset($_POST["Content"]))
